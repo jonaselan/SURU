@@ -8,7 +8,8 @@ namespace SURU {
     class Program {
         static void Main(string[] args) {
 
-
+            Console.WriteLine("no cu do primeiro");
+            Console.ReadKey();
 
         }
     }
