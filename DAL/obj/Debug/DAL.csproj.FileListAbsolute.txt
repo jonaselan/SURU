@@ -1,0 +1,6 @@
+\\psf\Home\Documents\TADS\Segundo Semestre\POO\Projeto Final\SURU\DAL\bin\Debug\DAL.exe.config
+C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\DAL.exe.config
+C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\DAL.exe
+C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\DAL.pdb
+C:\Users\Jonas Elan\Desktop\SURU\DAL\obj\Debug\DAL.exe
+C:\Users\Jonas Elan\Desktop\SURU\DAL\obj\Debug\DAL.pdb
