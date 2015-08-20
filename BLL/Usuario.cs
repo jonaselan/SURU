@@ -8,10 +8,10 @@ namespace BLL
 {
     public class Usuario
     {
-        protected int idUsuario;
-        protected string nome;
-        protected string matricula;
-        protected string telefone;
+        public int IdUsuario { get; set; }
+        public string nome { get; set; }
+        public string matricula { get; set; }
+        public string telefone { get; set; }
 
     }
 }
