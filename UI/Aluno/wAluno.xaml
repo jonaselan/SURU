@@ -1,0 +1,41 @@
+﻿<Window x:Class="UI.Aluno.wAluno"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SURU" Height="649" Width="655" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+            <GradientStop Color="#FFECEBE5" Offset="0.036"/>
+            <GradientStop Color="#FFE4DF67" Offset="0.843"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="104" VerticalAlignment="Top" Width="94" Margin="23,69,0,0" Source="../img/user.png" />
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="23,47,0,0" Stroke="Black" VerticalAlignment="Top" Width="561"/>
+        <Label Content="Dados do Aluno" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" BorderThickness="0" FontSize="22"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="21,226,0,0" Stroke="Black" VerticalAlignment="Top" Width="563"/>
+        <Label Content="Montar Prato" HorizontalAlignment="Left" Margin="21,189,0,0" VerticalAlignment="Top" BorderThickness="0" FontSize="22"/>
+        <Label Content="Segunda" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,244,0,0" FontSize="14"/>
+        <Grid Background="Gray" HorizontalAlignment="Left" Height="307" VerticalAlignment="Top" Width="193" Margin="23,279,0,0">
+            <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="24,67,0,0"/>
+            <Label Content="Verdura" HorizontalAlignment="Left" Margin="16,154,0,0" VerticalAlignment="Top"/>
+            <Label Content="Mistura" Margin="21,41,117,240"/>
+            <Label Content="Fruta" HorizontalAlignment="Left" Margin="19,194,0,0" VerticalAlignment="Top"/>
+            <RadioButton Content="Sim" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,160,0,0"/>
+            <RadioButton Content="Não" HorizontalAlignment="Left" Margin="129,160,0,0" VerticalAlignment="Top"/>
+            <RadioButton Content="Sim" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,200,0,0"/>
+            <RadioButton Content="Não" HorizontalAlignment="Left" Margin="129,200,0,0" VerticalAlignment="Top"/>
+            <Label Content="Suco" HorizontalAlignment="Left" Margin="19,225,0,0" VerticalAlignment="Top"/>
+            <RadioButton Content="Sim" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,231,0,0"/>
+            <RadioButton Content="Não" HorizontalAlignment="Left" Margin="129,231,0,0" VerticalAlignment="Top"/>
+            <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="23,123,0,0"/>
+            <Label Content="Acompanhamento:" Margin="22,97,42,184"/>
+            <CheckBox Content="tudo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="67,19,0,0"/>
+            <Button Content="Finalizar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="100,273,0,0"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="102" VerticalAlignment="Top" Width="415" Margin="148,71,0,0" Background="Gray">
+            <Label Content="Nome: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        </Grid>
+
+
+    </Grid>
+</Window>

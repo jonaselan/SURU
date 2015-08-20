@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-   public class Usuario
+    public class Usuario
     {
-        public int IdUsuario { get; set; }
-        public string Nome { get; set; }
-        public string Matricula { get; set; }
-        public string Telefone { get; set; }
+        protected int idUsuario;
+        protected string nome;
+        protected string matricula;
+        protected string telefone;
+
     }
 }
