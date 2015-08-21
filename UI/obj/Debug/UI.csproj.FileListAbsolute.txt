@@ -28,3 +28,6 @@ C:\Users\Jonas Elan\Desktop\suru2\SURU\UI\obj\Debug\UI_MarkupCompile.cache
 C:\Users\Jonas Elan\Desktop\suru2\SURU\UI\obj\Debug\UI.g.resources
 C:\Users\Jonas Elan\Desktop\suru2\SURU\UI\obj\Debug\UI.Properties.Resources.resources
 C:\Users\Jonas Elan\Desktop\suru2\SURU\UI\obj\Debug\UI.csproj.GenerateResource.Cache
+C:\Users\Jonathan\Documents\GitHubVisualStudio\SURU\UI\bin\Debug\UI.exe.config
+C:\Users\Jonathan\Documents\GitHubVisualStudio\SURU\UI\obj\Debug\UI.exe
+C:\Users\Jonathan\Documents\GitHubVisualStudio\SURU\UI\obj\Debug\UI.pdb
