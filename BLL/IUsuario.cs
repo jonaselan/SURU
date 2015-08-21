@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
 
-namespace DAL
+namespace BLL
 {
-    public class Class1
+    /* 
+    INTERFACE do usuário
+        404 ?
+     */
+    interface IUsuario
     {
+        /* falta implementar */
     }
 }

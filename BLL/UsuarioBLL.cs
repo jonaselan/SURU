@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class Class1
+    public class UsuarioBLL
     {
+        /* falta implementar */
     }
 }

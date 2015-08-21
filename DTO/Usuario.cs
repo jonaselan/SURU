@@ -10,15 +10,17 @@ namespace DTO
         MODELO DE USUÁRIO 
             1: Id - Identificação do usuário no database;
             2: Matricula - Matricula (IFRN);
-            3: Nome - Nome completo;
-            4: Telefone;
+            3: Senha - Senha de acesso;
+            4: IsAdm - Se o usuario tem privilegios de administrador;
+            5: IdPerfil - Id do perfil no banco de dados;
      */
     public class Usuario
     {
         private string id;
         private string matricula;
-        private string nome;
-        private string telefone;
+        private string senha;
+        private bool isadm;
+        private string idperfil;
 
         public string Id
         {
@@ -32,16 +34,22 @@ namespace DTO
             get { return this.matricula; }
         }
 
-        public string Nome
+        public string Senha
         {
-            set { this.nome = value; }
-            get { return this.nome;  }
+            set { this.senha = value; }
+            get { return this.senha;  }
         }
 
-        public string Telefone
+        public bool IsAdm
         {
-            set { this.telefone = value; }
-            get { return this.telefone; }
+            set { this.isadm = value; }
+            get { return this.isadm; }
+        }
+
+        public string IdPerfil
+        {
+            set { this.idperfil = value; }
+            get { return this.idperfil; }
         }
     }
 }
