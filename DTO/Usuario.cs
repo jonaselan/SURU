@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    /* 
-        MODELO DE USUÁRIO 
+    /*
+        MODELO DE USUÁRIO
             1: Id - Identificação do usuário no database;
             2: Matricula - Matricula (IFRN);
             3: Senha - Senha de acesso;
