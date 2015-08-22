@@ -13,6 +13,7 @@ namespace BLL
      */
     interface IUsuario
     {
-        /* falta implementar */
+        List<Usuario> GetLista();
+        void Inserir(Usuario u);
     }
 }

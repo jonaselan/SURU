@@ -14,13 +14,13 @@ namespace DTO
             4: IsAdm - Se o usuario tem privilegios de administrador;
             5: IdPerfil - Id do perfil no banco de dados;
      */
-    public class Usuario
+    public class Usuario : IComparable<Usuario>
     {
         private string id;
         private string matricula;
         private string senha;
         private bool isadm;
-        private string idperfil;
+        private Perfil perfil;
 
         public string Id
         {
@@ -46,10 +46,16 @@ namespace DTO
             get { return this.isadm; }
         }
 
-        public string IdPerfil
+        public Perfil Perfil
         {
-            set { this.idperfil = value; }
-            get { return this.idperfil; }
+            set { this.perfil = value; }
+            get { return this.perfil; }
+        }
+
+        public int CompareTo(Usuario other)
+        {
+            if (other.id == this.id) { return 1; }
+            return 0;
         }
     }
 }
