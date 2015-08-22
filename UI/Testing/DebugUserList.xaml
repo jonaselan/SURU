@@ -1,0 +1,31 @@
+﻿<Window x:Class="UI.Testing.DebugUserList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UI.Testing"
+        mc:Ignorable="d"
+        Title="Usuários" Height="305.042" Width="321.008">
+    <Grid>
+        <ListBox x:Name="listUsuarios" HorizontalAlignment="Left" Height="217" Margin="10,10,0,0" VerticalAlignment="Top" Width="272">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock>
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}{0}: {1} - {2}">
+                                    <Binding Path="Id"/>
+                                    <Binding Path="Matricula"/>
+                                    <Binding Path="Perfil.Nome"/>
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="btnSelecionar" Content="Selecionar" HorizontalAlignment="Left" Margin="10,239,0,0" VerticalAlignment="Top" Width="75" IsDefault="True" Click="btnSelecionar_Click"/>
+        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="90,239,0,0" VerticalAlignment="Top" Width="75" IsCancel="True"/>
+
+    </Grid>
+</Window>

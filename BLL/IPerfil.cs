@@ -7,12 +7,8 @@ using DTO;
 
 namespace BLL
 {
-    /* 
-    INTERFACE do usuário
-        404 ?
-     */
-    interface IUsuario
+    interface IPerfil
     {
-        Usuario ConsultarPorMatricula(string matricula);
+        Usuario ConsultarPorNome(string nome);
     }
 }

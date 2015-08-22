@@ -40,6 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBElementHandling.cs" />
+    <Compile Include="IDBElement.cs" />
+    <Compile Include="IPerfil.cs" />
+    <Compile Include="Login.cs" />
+    <Compile Include="PerfilBLL.cs" />
     <Compile Include="UsuarioBLL.cs" />
     <Compile Include="IUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

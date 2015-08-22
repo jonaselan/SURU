@@ -16,13 +16,13 @@ namespace DTO
      */
     public class Usuario : IComparable<Usuario>
     {
-        private string id;
+        private int id;
         private string matricula;
         private string senha;
         private bool isadm;
         private Perfil perfil;
 
-        public string Id
+        public int Id
         {
             set { this.id = value; }
             get { return this.id; }

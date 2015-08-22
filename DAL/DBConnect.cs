@@ -19,14 +19,17 @@ namespace DAL
         }
 
         private string[] db_path = new string[2]{
-            Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "db_users.xml",
-             Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "db_perfis.xml"
+            Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\db_users.xml",
+             Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\db_perfis.xml"
         };
 
         private string dbfile;
 
         public List<T> Select<T>()
         {
+            #if DEBUG
+            Console.WriteLine(dbfile);
+            #endif
             List<T> objs;
             try
             {

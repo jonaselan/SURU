@@ -10,6 +10,10 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
-        <Button Content="Entrar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="272,141,0,0" Click="Button_Click"/>
+        <Button Content="Entrar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Margin="0,120,0,0" Click="Button_Click"/>
+        <TextBox x:Name="txtMatricula" HorizontalAlignment="Center" Height="23" Margin="0,-30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120"/>
+        <Label x:Name="lbMatricula" Content="Matrícula:" HorizontalAlignment="Center" Margin="-185,-30,0,0" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtSenha" HorizontalAlignment="Center" Height="23" Margin="0,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120"/>
+        <Label x:Name="lbSenha" Content="Senha:" HorizontalAlignment="Center" Margin="-168,30,0,0" VerticalAlignment="Center"/>
     </Grid>
 </Window>

@@ -13,14 +13,14 @@ namespace DTO
             3: Telefone;
             4: E-mail;
      */
-    public class Perfil
+    public class Perfil : IComparable<Perfil>
     {
-        private string id;
+        private int id;
         private string nome;
         private string telefone;
         private string email;
 
-        public string Id
+        public int Id
         {
             set { this.id = value; }
             get { return this.id; }
@@ -42,6 +42,12 @@ namespace DTO
         {
             set { this.email = value; }
             get { return this.email; }
+        }
+
+        public int CompareTo(Perfil other)
+        {
+            if (other.id == this.id) { return 1; }
+            return 0;
         }
     }
 }
