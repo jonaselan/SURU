@@ -1,5 +1,5 @@
 ﻿/* DESCOMENTE A LINHA ABAIXO PARA ABRIR JANELA DE DB */
-//#define DEBUG_DB
+#define DEBUG_DB
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -28,7 +28,8 @@ namespace BLL
 
         public Perfil ConsultarPorId(int id)
         {
-            throw new NotImplementedException();
+            DBConnect db = new DBConnect(1);
+            return db.Select<Perfil>().FirstOrDefault(p => p.Id == id);
         }
 
         public Usuario ConsultarPorNome(string nome)

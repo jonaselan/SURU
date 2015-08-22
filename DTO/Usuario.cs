@@ -20,7 +20,7 @@ namespace DTO
         private string matricula;
         private string senha;
         private bool isadm;
-        private Perfil perfil;
+        private int idperfil;
 
         public int Id
         {
@@ -46,10 +46,10 @@ namespace DTO
             get { return this.isadm; }
         }
 
-        public Perfil Perfil
+        public int IdPerfil
         {
-            set { this.perfil = value; }
-            get { return this.perfil; }
+            set { this.idperfil = value; }
+            get { return this.idperfil; }
         }
 
         public int CompareTo(Usuario other)

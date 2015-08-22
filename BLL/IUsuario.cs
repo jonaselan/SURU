@@ -14,5 +14,7 @@ namespace BLL
     interface IUsuario
     {
         Usuario ConsultarPorMatricula(string matricula);
+        void Inserir(Usuario u, Perfil p);
+        void Alterar(Usuario u, Perfil p);
     }
 }

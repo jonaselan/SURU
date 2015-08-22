@@ -19,7 +19,7 @@ namespace BLL
             return db.Select<Usuario>();
         }
 
-        public void Inserir(Usuario u)
+        public void Inserir(Usuario u, Perfil p)
         {
             /* RETIRANDO OS ESPAÇOS */
 
@@ -33,8 +33,8 @@ namespace BLL
             u.Senha = DBElementHandling.Hash(u.Senha);
 
             /* TENTAR INSERIR O PERFIL */
-            PerfilBLL p = new PerfilBLL();
-            try { p.Inserir(u.Perfil); } catch(Exception ex) { throw ex; }
+            PerfilBLL pbll = new PerfilBLL();
+            try { pbll.Inserir(p); } catch(Exception ex) { throw ex; }
 
             /* CONECTANDO AO DB */
             DBConnect db = new DBConnect(0);
@@ -47,7 +47,7 @@ namespace BLL
             return db.Select<Usuario>().FirstOrDefault(u => u.Matricula == matricula);
         }
 
-        public void Alterar(Usuario u)
+        public void Alterar(Usuario u, Perfil p)
         {
             /* RETIRANDO OS ESPAÇOS */
             DBElementHandling.RemoverEspacos(u);
@@ -56,8 +56,9 @@ namespace BLL
             try { IsValido(u); } catch (Exception ex) { throw ex; }
 
             /* TENTAR ALTERAR O PERFIL */
-            PerfilBLL p = new PerfilBLL();
-            try { p.Alterar(u.Perfil); } catch (Exception ex) { throw ex; }
+            PerfilBLL pbll = new PerfilBLL();
+
+            try { pbll.Alterar(p); } catch (Exception ex) { throw ex; }
 
             /* CONECTANDO AO DB */
             DBConnect db = new DBConnect(0);
@@ -78,6 +79,16 @@ namespace BLL
         {
             if (e.Matricula == "") { throw new Exception("Matrícula inválida"); }
             if (e.Senha == "") { throw new Exception("Senha inválida"); }
+        }
+
+        public void Inserir(Usuario e)
+        {
+            throw new Exception("Perfil não especificado.");
+        }
+
+        public void Alterar(Usuario e)
+        {
+            throw new Exception("Perfil não especificado.");
         }
     }
 }

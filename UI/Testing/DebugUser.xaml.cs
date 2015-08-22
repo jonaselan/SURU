@@ -32,11 +32,14 @@ namespace UI.Testing
             if (listwindow.ShowDialog() == true)
             {
                 Usuario usr = (Usuario)listwindow.listUsuarios.SelectedItem;
+                PerfilBLL pbll = new PerfilBLL();
+                Perfil p = pbll.ConsultarPorId(usr.IdPerfil);
                 txtMatricula.Text = usr.Matricula;
                 pwdSenha.Password = usr.Senha;
-                txtNome.Text = usr.Perfil.Nome;
-                txtTelefone.Text = usr.Perfil.Telefone;
-                txtEmail.Text = usr.Perfil.Email;
+                chkAdmin.IsChecked = usr.IsAdm;
+                txtNome.Text = p.Nome;
+                txtTelefone.Text = p.Telefone;
+                txtEmail.Text = p.Email;
             }
         }
 
@@ -45,21 +48,22 @@ namespace UI.Testing
             Usuario usr = new Usuario();
             UsuarioBLL db_usr = new UsuarioBLL();
             PerfilBLL db_pf = new PerfilBLL();
+            Perfil p = new Perfil(); ;
             usr.Matricula = txtMatricula.Text;
             usr.Senha = pwdSenha.Password;
             usr.IsAdm = (bool) chkAdmin.IsChecked;
-            usr.Perfil = new Perfil();
-            usr.Perfil.Nome = txtNome.Text;
-            usr.Perfil.Telefone = txtTelefone.Text;
-            usr.Perfil.Email = txtEmail.Text;
+            p.Nome = txtNome.Text;
+            p.Telefone = txtTelefone.Text;
+            p.Email = txtEmail.Text;
             Usuario usr_match = db_usr.ConsultarPorMatricula(txtMatricula.Text);
             if (usr_match == null)
             {
                 try
                 {
-                    usr.Id = db_usr.Listar().Count() + 1;
-                    usr.Perfil.Id = db_pf.Listar().Count + 1;
-                    db_usr.Inserir(usr);
+                    usr.Id = db_usr.Listar().Count() + 1;                 
+                    p.Id = db_pf.Listar().Count + 1;
+                    usr.IdPerfil = p.Id;
+                    db_usr.Inserir(usr, p);
                 }
                 catch (Exception ex)
                 {
@@ -68,9 +72,16 @@ namespace UI.Testing
             }
             else
             {
-                usr.Id = usr_match.Id;
-                usr.Perfil.Id = usr_match.Perfil.Id;
-                db_usr.Alterar(usr);
+                try
+                {
+                    usr.Id = usr_match.Id;
+                    usr.IdPerfil = usr_match.IdPerfil;
+                    db_usr.Alterar(usr, p);
+                }
+                catch (Exception ex)
+                {
+                    MessageBoxResult errBox = MessageBox.Show(ex.Message, "Erro", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
         }
 
