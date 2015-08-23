@@ -67,12 +67,24 @@ namespace BLL
 
         public void Remover(Usuario u)
         {
-            throw new NotImplementedException();
+            /* RETIRANDO OS ESPAÇOS */
+
+            DBElementHandling.RemoverEspacos(u);
+
+            PerfilBLL pbll = new PerfilBLL();
+
+            Perfil p = pbll.ConsultarPorId(u.IdPerfil);
+
+            try { pbll.Remover(p); } catch (Exception ex) { throw ex; }
+
+            DBConnect db = new DBConnect(0);
+            db.Delete(u);
         }
 
         public Usuario ConsultarPorId(int id)
         {
-            throw new NotImplementedException();
+            DBConnect db = new DBConnect(0);
+            return db.Select<Usuario>().FirstOrDefault(p => p.Id == id);
         }
 
         public void IsValido(Usuario e)

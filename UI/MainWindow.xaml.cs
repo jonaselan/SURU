@@ -1,5 +1,5 @@
 ﻿/* DESCOMENTE A LINHA ABAIXO PARA ABRIR JANELA DE DB */
-#define DEBUG_DB
+//#define DEBUG_DB
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using UI.Aluno;
+#if DEBUG_DB
 using UI.Testing;
+#endif
 using DTO;
 using BLL;
 
@@ -26,23 +28,24 @@ namespace UI
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
             /*
                 DESCOMENTE A LINHA ABAIXO PARA ABRIR DB_DEBUG
             */
-            #if DEBUG_DB
+#if DEBUG_DB
             DebugUser janelaDBDebug = new DebugUser();
             janelaDBDebug.Show();
-            #endif
+#endif
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnEntrar_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                Session session = session = Login.Validar(txtMatricula.Text, txtSenha.Text);
+                Session session = session = Login.Validar(txtMatricula.Text, pwdSenha.Password);
             }
             catch (Exception ex)
             {
@@ -54,6 +57,63 @@ namespace UI
             wAluno telaAluno = new wAluno();
             this.Close();
             telaAluno.ShowDialog();
+        }
+
+        private void txtMatricula_GotFocus(object sender, RoutedEventArgs e)
+        {
+            lbMatricula.Visibility = Visibility.Hidden;
+        }
+
+        private void txtMatricula_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtMatricula.Text != "") { return; }
+            lbMatricula.Visibility = Visibility.Visible;
+
+        }
+
+        private void pwdSenha_GotFocus(object sender, RoutedEventArgs e)
+        {
+            lbSenha.Visibility = Visibility.Hidden;
+        }
+
+        private void pwdSenha_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (pwdSenha.Password != "") { return; }
+            lbSenha.Visibility = Visibility.Visible;
+        }
+
+        private void btnLimpar_Click(object sender, RoutedEventArgs e)
+        {
+            txtMatricula.Text = "";
+            pwdSenha.Password = "";
+            lbMatricula.Visibility = Visibility.Visible;
+            lbSenha.Visibility = Visibility.Visible;
+        }
+
+        private void lbInput_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 1) {
+                var label = (System.Windows.Controls.Label)sender;
+                Keyboard.Focus(label.Target);
+            }
+        }
+
+        public string ProgramVersion
+        {
+            get { return Program.Version; }
+        }
+
+        private async void LoginWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            bool uptodate = await ProgramBLL.IsUpToDate();
+            if (uptodate)
+            {
+                txbGit.Text = "Nenhuma atualização pendente.";
+            }
+            else
+            {
+                txbGit.Text = "Versão nova disponível: "+Program.OnlineVersion;
+            }
         }
     }
 }

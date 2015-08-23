@@ -9,6 +9,6 @@ namespace BLL
 {
     interface IPerfil
     {
-        Usuario ConsultarPorNome(string nome);
+        Perfil ConsultarPorNome(string nome);
     }
 }

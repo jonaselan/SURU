@@ -32,9 +32,10 @@ namespace BLL
             return db.Select<Perfil>().FirstOrDefault(p => p.Id == id);
         }
 
-        public Usuario ConsultarPorNome(string nome)
+        public Perfil ConsultarPorNome(string nome)
         {
-            throw new NotImplementedException();
+            DBConnect db = new DBConnect(1);
+            return db.Select<Perfil>().FirstOrDefault(p => p.Nome == nome);
         }
 
         public void Inserir(Perfil p)
@@ -64,7 +65,11 @@ namespace BLL
 
         public void Remover(Perfil p)
         {
-            throw new NotImplementedException();
+            /* RETIRANDO OS ESPAÇOS */
+            DBElementHandling.RemoverEspacos(p);
+
+            DBConnect db = new DBConnect(1);
+            db.Delete(p);
         }
     }
 }
