@@ -24,20 +24,44 @@ namespace UI.Testing
         public DebugUserList()
         {
             InitializeComponent();
+        }
+
+        private List<ItemComposto> GetDB() {
             UsuarioBLL usuariobll = new UsuarioBLL();
-            listUsuarios.ItemsSource = usuariobll.Listar();
+            PerfilBLL perfillbll = new PerfilBLL();
+            List<Usuario> usrs = usuariobll.Listar();
+            List<Perfil> perfis = perfillbll.Listar();
+            ItemComposto itemcomposto;
+            List<ItemComposto> combined = new List<ItemComposto>();
+            foreach (Perfil p in perfis) {
+                foreach (Usuario u in usrs.Where(us => us.IdPerfil == p.Id)) {
+                    itemcomposto = new ItemComposto();
+                    itemcomposto.Item1 = u;
+                    itemcomposto.Item2 = p;
+                    combined.Add(itemcomposto);
+                }
+            }
+            return combined;
         }
 
         private void btnSelecionar_Click(object sender, RoutedEventArgs e)
         {
-            if(listUsuarios.SelectedItem != null)
-            {
-                this.DialogResult = true;
-            }
-            else
-            {
-                MessageBoxResult errBox = MessageBox.Show("Nenhum usuário foi selecionado!", "Erro", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
+            this.DialogResult = true;
+        }
+
+        private void listUsuarios_Selected(object sender, RoutedEventArgs e)
+        {
+            btnSelecionar.IsEnabled = true;
+        }
+
+        private void DebugUserListWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            dgUsuarios.ItemsSource = GetDB();
+        }
+
+        private void dgUsuarios_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+
         }
     }
 }

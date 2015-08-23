@@ -1,5 +1,5 @@
 ﻿/* DESCOMENTE A LINHA ABAIXO PARA ABRIR JANELA DE DB */
-//#define DEBUG_DB
+#define DEBUG_DB
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -113,6 +113,16 @@ namespace UI
             else
             {
                 txbGit.Text = "Versão nova disponível: "+Program.OnlineVersion;
+                txbGit.Cursor = Cursors.Hand;
+                txbGit.MouseLeftButtonUp += txbGit_MouseLeftButtonUp;
+            }
+        }
+
+        private void txbGit_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/jonaselan/SURU");
             }
         }
     }

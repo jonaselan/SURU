@@ -5,26 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI.Testing"
         mc:Ignorable="d"
-        Title="Usuários" Height="305.042" Width="321.008">
+        x:Name="DebugUserListWindow"
+        Title="Usuários" Height="305.042" Width="321.008" Background="#FFE4E4E4" Loaded="DebugUserListWindow_Loaded">
     <Grid>
-        <ListBox x:Name="listUsuarios" HorizontalAlignment="Left" Height="217" Margin="10,10,0,0" VerticalAlignment="Top" Width="272">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <TextBlock>
-                            <TextBlock.Text>
-                                <MultiBinding StringFormat="{}{0}: {1}">
-                                    <Binding Path="Id"/>
-                                    <Binding Path="Matricula"/>
-                                </MultiBinding>
-                            </TextBlock.Text>
-                        </TextBlock>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <Button x:Name="btnSelecionar" Content="Selecionar" HorizontalAlignment="Left" Margin="10,239,0,0" VerticalAlignment="Top" Width="75" IsDefault="True" Click="btnSelecionar_Click"/>
-        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="90,239,0,0" VerticalAlignment="Top" Width="75" IsCancel="True"/>
+        <!--
+        <ListBox x:Name="listUsuarios" HorizontalAlignment="Left" Height="217" Margin="10,10,0,0" VerticalAlignment="Top" Width="272" SelectionChanged="listUsuarios_Selected"/>
+        -->
+        <StackPanel>
+            <DataGrid x:Name="dgUsuarios" IsReadOnly="True" AutoGenerateColumns="False" SelectedCellsChanged="dgUsuarios_SelectedCellsChanged">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="ID">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Item1.Id}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Matrícula">
+                        
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Nome">
 
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid>
+                <Button x:Name="btnSelecionar" Content="Selecionar" HorizontalAlignment="Left" Margin="10,239,0,0" VerticalAlignment="Top" Width="75" IsDefault="True" Click="btnSelecionar_Click" Background="White" BorderBrush="#FFAAAAAA" IsEnabled="False"/>
+                <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="90,239,0,0" VerticalAlignment="Top" Width="75" IsCancel="True" Background="White" BorderBrush="#FFAAAAAA"/>
+            </Grid>
+        </StackPanel>
     </Grid>
 </Window>

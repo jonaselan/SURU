@@ -31,7 +31,7 @@ namespace UI.Testing
             DebugUserList listwindow = new DebugUserList();
             if (listwindow.ShowDialog() == true)
             {
-                Usuario usr = (Usuario)listwindow.listUsuarios.SelectedItem;
+                Usuario usr = (Usuario)listwindow.dgUsuarios.SelectedItem;
                 PerfilBLL pbll = new PerfilBLL();
                 Perfil p = pbll.ConsultarPorId(usr.IdPerfil);
                 txtMatricula.Text = usr.Matricula;
@@ -88,6 +88,33 @@ namespace UI.Testing
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             
+        }
+
+        private void txtMatricula_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtMatricula.Text == "")
+            {
+                btnRemover.IsEnabled = false;
+            }
+            else
+            {
+                btnRemover.IsEnabled = true;
+            }
+        }
+
+        private void btnRemover_Click(object sender, RoutedEventArgs e)
+        {
+            Usuario usr = new Usuario();
+            UsuarioBLL db_usr = new UsuarioBLL();
+            usr.Matricula = txtMatricula.Text;
+            try
+            {
+                db_usr.Remover(usr);
+            }
+            catch (Exception ex)
+            {
+                MessageBoxResult errBox = MessageBox.Show(ex.Message, "Erro", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }

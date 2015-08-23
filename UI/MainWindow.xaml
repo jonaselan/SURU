@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="UI.MainWindow"
-        Title="SURU" Height="460" Width="500" ResizeMode="CanResize" MinHeight="460" MinWidth="500" WindowStartupLocation="CenterScreen" Background="#FFE4E4E4" Name="LoginWindow" Loaded="LoginWindow_Loaded">
+        Title="SURU" Height="460" Width="500" ResizeMode="CanResize" MinHeight="460" MinWidth="500" WindowStartupLocation="CenterScreen" Background="#FFE4E4E4" Name="LoginWindow" Loaded="LoginWindow_Loaded" Icon="SIcone.ico">
     <Grid>
         <Button x:Name="btnEntrar" Content="Entrar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="25" Margin="150,120,0,0" Click="btnEntrar_Click" Background="White" Foreground="#FF919191" BorderBrush="#FFAAAAAA" IsDefault="True"/>
         <Button x:Name="btnLimpar" Content="Limpar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="25" Margin="30,120,0,0" Click="btnLimpar_Click" Background="White" Foreground="#FF919191" BorderBrush="#FFAAAAAA"/>
@@ -15,13 +15,18 @@
                 <DropShadowEffect ShadowDepth="1" Opacity="0.5"/>
             </TextBlock.Effect>
         </TextBlock>
+        
+        <TextBlock x:Name="txbVersion" HorizontalAlignment="Right" Margin="0,0,10,5" TextWrapping="Wrap" Text="{Binding ProgramVersion, ElementName=LoginWindow}" VerticalAlignment="Bottom" Foreground="#FF9E9E9E"/>
+        <TextBlock x:Name="txbGit" HorizontalAlignment="Left" Margin="10,0,0,5" TextWrapping="Wrap" Text="Verificando se há atualizações..." VerticalAlignment="Bottom" Foreground="#FF9E9E9E"/>
+        <!-- LOGO POR TEXTO 
         <Canvas HorizontalAlignment="Center" Height="50" Margin="-67,-200,0,0" VerticalAlignment="Center" Width="65" Background="#FF595959"/>
         <StackPanel HorizontalAlignment="Center" Height="60" Margin="0,-200,0,0" VerticalAlignment="Center" Width="128" Orientation="Horizontal">
             <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="S" VerticalAlignment="Center" FontSize="48" FontWeight="Bold" Foreground="White"/>
             <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="U" VerticalAlignment="Center" FontSize="48" FontWeight="Bold" Foreground="#FFE60000"/>
             <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="RU" VerticalAlignment="Center" FontSize="48" FontWeight="Bold" Foreground="#FF559EDA"/>
         </StackPanel>
-        <TextBlock x:Name="txbVersion" HorizontalAlignment="Right" Margin="0,0,10,5" TextWrapping="Wrap" Text="{Binding ProgramVersion, ElementName=LoginWindow}" VerticalAlignment="Bottom" Foreground="#FF9E9E9E"/>
-        <TextBlock x:Name="txbGit" HorizontalAlignment="Left" Margin="10,0,0,5" TextWrapping="Wrap" Text="Verificando se há atualizações..." VerticalAlignment="Bottom" Foreground="#FF9E9E9E"/>
+        -->
+        <!-- LOGO POR ÍCONE -->
+        <Image x:Name="image" HorizontalAlignment="Center" Height="120" Margin="0,0,0,250" VerticalAlignment="Center" Width="120" Source="SIcone_NoShadow.ico"/>
     </Grid>
 </Window>

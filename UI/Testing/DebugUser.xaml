@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI.Testing"
         mc:Ignorable="d"
-        Title="Debug DB Usuário" Height="348.74" Width="513.446" Closing="Window_Closing">
+        Icon="SIconeDebug.ico"
+        Title="Debug DB Usuário" Height="348" Width="513" Closing="Window_Closing" Background="#FFE4E4E4">
     <Grid>
         <GroupBox x:Name="gpUser" Header="Informações do usuário" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="112" Width="466">
             <Grid Height="92" Margin="0,0,-2,-2" VerticalAlignment="Top">
                 <Label x:Name="lbMatricula" Content="Matrícula:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
-                <TextBox x:Name="txtMatricula" HorizontalAlignment="Left" Height="23" Margin="77,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="txtMatricula" HorizontalAlignment="Left" Height="23" Margin="77,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="txtMatricula_TextChanged"/>
                 <Label x:Name="lbSenha" Content="Senha:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="27,40,0,0"/>
                 <PasswordBox x:Name="pwdSenha" HorizontalAlignment="Left" Height="23" Margin="77,44,0,0" VerticalAlignment="Top" Width="120"/>
                 <CheckBox x:Name="chkAdmin" Content="Administrador" HorizontalAlignment="Left" Margin="76,72,0,0" VerticalAlignment="Top"/>
@@ -26,8 +27,9 @@
                 <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="67,74,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
             </Grid>
         </GroupBox>
-        <Button x:Name="btnSelecionar" Content="Abrir DB" HorizontalAlignment="Left" Margin="401,272,0,0" VerticalAlignment="Top" Width="75" Click="btnSelecionar_Click"/>
-        <Button x:Name="btnInsAlt" Content="Inserir / Alterar" HorizontalAlignment="Left" Margin="304,272,0,0" VerticalAlignment="Top" Width="92" Click="btnInsAlt_Click"/>
+        <Button x:Name="btnSelecionar" Content="Abrir DB" HorizontalAlignment="Left" Margin="401,272,0,0" VerticalAlignment="Top" Width="75" Click="btnSelecionar_Click" Background="White" BorderBrush="#FFAAAAAA"/>
+        <Button x:Name="btnInsAlt" Content="Inserir / Alterar" HorizontalAlignment="Left" Margin="304,272,0,0" VerticalAlignment="Top" Width="92" Click="btnInsAlt_Click" Background="White" BorderBrush="#FFAAAAAA"/>
+        <Button x:Name="btnRemover" Content="Remover" HorizontalAlignment="Left" Margin="224,272,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="btnRemover_Click" Background="White" BorderBrush="#FFAAAAAA"/>
 
     </Grid>
 </Window>

@@ -71,6 +71,10 @@ namespace BLL
 
             DBElementHandling.RemoverEspacos(u);
 
+            u = ConsultarPorMatricula(u.Matricula);
+
+            if (u == null) { throw new Exception("Usuário não encontrado"); } ;
+
             PerfilBLL pbll = new PerfilBLL();
 
             Perfil p = pbll.ConsultarPorId(u.IdPerfil);
