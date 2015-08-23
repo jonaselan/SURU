@@ -4,3 +4,4 @@ C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\DAL.exe
 C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\DAL.pdb
 C:\Users\Jonas Elan\Desktop\SURU\DAL\obj\Debug\DAL.exe
 C:\Users\Jonas Elan\Desktop\SURU\DAL\obj\Debug\DAL.pdb
+C:\Users\Jonas Elan\Desktop\SURU\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

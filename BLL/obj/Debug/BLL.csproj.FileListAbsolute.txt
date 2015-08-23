@@ -3,3 +3,4 @@ C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\BLL.exe
 C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\BLL.pdb
 C:\Users\Jonas Elan\Desktop\SURU\BLL\obj\Debug\BLL.exe
 C:\Users\Jonas Elan\Desktop\SURU\BLL\obj\Debug\BLL.pdb
+C:\Users\Jonas Elan\Desktop\SURU\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,16 +13,341 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace UI.Aluno
-{
+namespace UI.Aluno {
     /// <summary>
     /// Interaction logic for wAluno.xaml
     /// </summary>
-    public partial class wAluno : Window
-    {
+    public partial class wAluno : Window {
         public wAluno()
         {
             InitializeComponent();
+            cbSucoSeg.SelectedIndex = 0;
+            cbSucoTerc.SelectedIndex = 0;
+            cbSucoQuart.SelectedIndex = 0;
+            cbSucoQuint.SelectedIndex = 0;
+            cbSucoSex.SelectedIndex = 0;
+        }     
+        
+        private void ckSeg_Checked(object sender, RoutedEventArgs e)
+        {
+            carneSeg.IsChecked = true;
+            arrozSeg.IsChecked = true;
+            feijaoSeg.IsChecked = true;
+            verduraSeg.IsChecked = true;
+            frutaSeg.IsChecked = true;
+            lbSucoSeg.Visibility = Visibility.Visible;
         }
+        private void ckSeg_Unchecked(object sender, RoutedEventArgs e)
+        {
+            carneSeg.IsChecked = false;
+            arrozSeg.IsChecked = false;
+            feijaoSeg.IsChecked = false;
+            verduraSeg.IsChecked = false;
+            frutaSeg.IsChecked = false;
+            lbSucoSeg.Visibility = Visibility.Hidden;
+        }
+
+        private void ckTerc_Checked(object sender, RoutedEventArgs e)
+        {
+            carneTerc.IsChecked = true;
+            arrozTerc.IsChecked = true;
+            feijaoTerc.IsChecked = true;
+            verduraTerc.IsChecked = true;
+            frutaTerc.IsChecked = true;
+            lbSucoTerc.Visibility = Visibility.Visible;
+        }
+        private void ckTerc_Unchecked(object sender, RoutedEventArgs e)
+        {
+            carneTerc.IsChecked = false;
+            arrozTerc.IsChecked = false;
+            feijaoTerc.IsChecked = false;
+            verduraTerc.IsChecked = false;
+            frutaTerc.IsChecked = false;
+            lbSucoTerc.Visibility = Visibility.Hidden;
+        }
+
+        private void ckQuart_Checked(object sender, RoutedEventArgs e)
+        {
+            carneQuart.IsChecked = true;
+            arrozQuart.IsChecked = true;
+            feijaoQuart.IsChecked = true;
+            verduraQuart.IsChecked = true;
+            frutaQuart.IsChecked = true;
+            lbSucoQuart.Visibility = Visibility.Visible;
+        }
+        private void ckQuart_Unchecked(object sender, RoutedEventArgs e)
+        {
+            carneQuart.IsChecked = false;
+            arrozQuart.IsChecked = false;
+            feijaoQuart.IsChecked = false;
+            verduraQuart.IsChecked = false;
+            frutaQuart.IsChecked = false;
+            lbSucoQuart.Visibility = Visibility.Hidden;
+        }
+
+        private void ckQuint_Checked(object sender, RoutedEventArgs e)
+        {
+            carneQuint.IsChecked = true;
+            arrozQuint.IsChecked = true;
+            feijaoQuint.IsChecked = true;
+            verduraQuint.IsChecked = true;
+            frutaQuint.IsChecked = true;
+            lbSucoQuint.Visibility = Visibility.Visible;
+        }
+        private void ckQuint_Unchecked(object sender, RoutedEventArgs e)
+        {
+            carneQuint.IsChecked = false;
+            arrozQuint.IsChecked = false;
+            feijaoQuint.IsChecked = false;
+            verduraQuint.IsChecked = false;
+            frutaQuint.IsChecked = false;
+            lbSucoQuint.Visibility = Visibility.Hidden;
+        }
+
+        private void ckSex_Unchecked(object sender, RoutedEventArgs e)
+        {
+            carneSex.IsChecked = false;
+            arrozSex.IsChecked = false;
+            feijaoSex.IsChecked = false;
+            verduraSex.IsChecked = false;
+            frutaSex.IsChecked = false;
+            lbSucoSex.Visibility = Visibility.Hidden;
+        }
+        private void ckSex_Checked(object sender, RoutedEventArgs e)
+        {
+            carneSex.IsChecked = true;
+            arrozSex.IsChecked = true;
+            feijaoSex.IsChecked = true;
+            verduraSex.IsChecked = true;
+            frutaSex.IsChecked = true;
+            lbSucoSex.Visibility = Visibility.Visible;
+        }
+
+        // array com todos a data de todos os dias da semana
+        private ArrayList diaAtual()
+        {
+            // DESCOMENTAR QUANDO DIA DA SEMANA
+            // DateTime a = DateTime.Today; 
+
+            DateTime a = new DateTime(2015, 8, 24);
+            ArrayList listaDias = new ArrayList();
+            //string diaAtual = Convert.ToString(DateTime.Now.DayOfWeek);
+            string diaAtual = Convert.ToString(a.DayOfWeek);
+
+            if (diaAtual == "Monday")
+            {
+                listaDias.Add(a.ToString(("dd/MM/yyyy"))); // seg
+                listaDias.Add(a.AddDays(1).ToString(("dd/MM/yyyy"))); // tec
+                listaDias.Add(a.AddDays(2).ToString(("dd/MM/yyyy"))); // quart
+                listaDias.Add(a.AddDays(3).ToString(("dd/MM/yyyy"))); // quint
+                listaDias.Add(a.AddDays(4).ToString(("dd/MM/yyyy"))); // sext
+            }
+            else if (diaAtual == "Tuesday")
+            {
+                listaDias.Add(a.AddDays(-1).ToString(("dd/MM/yyyy"))); // seg
+                listaDias.Add(a.ToString(("dd/MM/yyyy"))); // tec
+                listaDias.Add(a.AddDays(1).ToString(("dd/MM/yyyy"))); // quart
+                listaDias.Add(a.AddDays(2).ToString(("dd/MM/yyyy"))); // quint
+                listaDias.Add(a.AddDays(3).ToString(("dd/MM/yyyy"))); // sext
+
+            }
+            else if (diaAtual == "Wednesday")
+            {
+                listaDias.Add(a.AddDays(-2).ToString(("dd/MM/yyyy"))); // seg
+                listaDias.Add(a.AddDays(-1).ToString(("dd/MM/yyyy"))); // ter
+                listaDias.Add(a.ToString(("dd/MM/yyyy"))); // quart
+                listaDias.Add(a.AddDays(1).ToString(("dd/MM/yyyy"))); // quint
+                listaDias.Add(a.AddDays(2).ToString(("dd/MM/yyyy"))); // sext
+            }
+            else if (diaAtual == "Thursday")
+            {
+                listaDias.Add(a.AddDays(-3).ToString(("dd/MM/yyyy"))); // seg
+                listaDias.Add(a.AddDays(-2).ToString(("dd/MM/yyyy"))); // ter
+                listaDias.Add(a.AddDays(-1).ToString(("dd/MM/yyyy"))); // quart
+                listaDias.Add(a.ToString(("dd/MM/yyyy"))); // quint
+                listaDias.Add(a.AddDays(1).ToString(("dd/MM/yyyy"))); // sex
+            }
+            else if (diaAtual == "Friday")
+            {
+                listaDias.Add(a.AddDays(-4).ToString(("dd/MM/yyyy"))); // seg
+                listaDias.Add(a.AddDays(-3).ToString(("dd/MM/yyyy"))); // ter
+                listaDias.Add(a.AddDays(-2).ToString(("dd/MM/yyyy"))); // quart
+                listaDias.Add(a.AddDays(-1).ToString(("dd/MM/yyyy"))); // quint
+                listaDias.Add(a.ToString(("dd/MM/yyyy"))); // sex
+            }
+
+            return listaDias;
+        }
+
+        private void finSegunda_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Tem certeza?", "Montar Prato", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                string pratoFeito = "";
+
+                // mistura
+                if (frangoSeg.IsChecked == true)
+                {
+                    pratoFeito += "Frango ";
+                }
+                else if (peixeSeg.IsChecked == true)
+                {
+                    pratoFeito += "Peixe ";
+                }
+                else if (carneSeg.IsChecked == true)
+                {
+                    pratoFeito += "Carne ";
+                }
+                else if (lingSeg.IsChecked == true)
+                {
+                    pratoFeito += "Linguiça ";
+                }
+
+                // acompanhamento
+                if (arrozSeg.IsChecked == true)
+                {
+                    pratoFeito += "Arroz ";
+                }
+                else if (macarraoSeg.IsChecked == true)
+                {
+                    pratoFeito += "Macarrão ";
+                }
+
+                // feijão
+                if (feijaoSeg.IsChecked == true)
+                {
+                    pratoFeito += "Feijão ";
+                }
+                else pratoFeito += "- ";
+
+                // verdura
+                if (verduraSeg.IsChecked == true)
+                {
+                    pratoFeito += "Verdura ";
+                }
+                else pratoFeito += "- ";
+
+                // fruta
+                if (frutaSeg.IsChecked == true)
+                {
+                    pratoFeito += "Fruta ";
+                }
+                else pratoFeito += "- ";
+
+                // suco
+                pratoFeito += cbSucoSeg.SelectionBoxItem;
+
+                // data 
+                ArrayList diasSemana = new ArrayList();
+                diasSemana = diaAtual();
+                pratoFeito += diasSemana[0].ToString();
+
+                // idPrato
+                Random rdn = new Random();
+                string idPrato = Convert.ToString(rdn.Next(1000, 2000));
+
+                MessageBox.Show("Prato montando com sucesso!\n Seu código é " + idPrato);
+                lbCodigoSeg.Content = idPrato;
+
+
+                gridSeg.IsEnabled = false;
+                lbSucoSeg.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void finTerca_Click(object sender, RoutedEventArgs e) {
+            string pratoFeito = "";
+
+            // mistura
+            if (frangoTerc.IsChecked == true)
+            {
+                pratoFeito += "Frango ";
+            }
+            else if (peixeTerc.IsChecked == true)
+            {
+                pratoFeito += "Peixe ";
+            }
+            else if (carneTerc.IsChecked == true)
+            {
+                pratoFeito += "Carne ";
+            }
+            else if (lingTerc.IsChecked == true)
+            {
+                pratoFeito += "Linguiça ";
+            }
+
+            // acompanhamento
+            if (arrozTerc.IsChecked == true)
+            {
+                pratoFeito += "Arroz ";
+            }
+            else if (macarraoTerc.IsChecked == true)
+            {
+                pratoFeito += "Macarrão ";
+            }
+
+            // feijão
+            if (feijaoTerc.IsChecked == true)
+            {
+                pratoFeito += "Feijão ";
+            }
+            else pratoFeito += "- ";
+
+            // verdura
+            if (verduraTerc.IsChecked == true)
+            {
+                pratoFeito += "Verdura ";
+            }
+            else pratoFeito += "- ";
+
+            // fruta
+            if (frutaTerc.IsChecked == true)
+            {
+                pratoFeito += "Fruta ";
+            }
+            else pratoFeito += "- ";
+
+            // suco
+            pratoFeito += cbSucoTerc.SelectionBoxItem;
+
+
+            // data 
+            ArrayList diasSemana = new ArrayList();
+            diasSemana = diaAtual();
+
+            DateTime b = new DateTime(2015, 8, 24); // data de hoje
+            string dia = Convert.ToString(b.DayOfWeek);
+
+            if (dia == "Monday")
+            {
+                pratoFeito += diasSemana[1].ToString();
+            }
+            else if (dia == "Tuesday")
+            {
+                pratoFeito += diasSemana[1].ToString();
+            }
+            
+
+
+            
+            // idPrato
+            Random rdn = new Random();
+            string idPrato = Convert.ToString(rdn.Next(1000, 2000));
+
+            MessageBox.Show("Prato montando com sucesso!\n Seu código é " + idPrato);
+            lbCodigoTerc.Content = idPrato;
+
+
+            gridTerc.IsEnabled = false;
+            lbSucoTerc.Visibility = Visibility.Hidden;
+        }
+
+        
+
+        
+
+
+
+
     }
 }
