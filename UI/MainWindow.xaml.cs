@@ -31,6 +31,9 @@ namespace UI
 
         public MainWindow()
         {
+            string executable = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            string path = (System.IO.Path.GetDirectoryName(executable));
+            AppDomain.CurrentDomain.SetData("DataDirectory", path);
             InitializeComponent();
             /*
                 DESCOMENTE A LINHA ABAIXO PARA ABRIR DB_DEBUG
@@ -41,11 +44,11 @@ namespace UI
 #endif
         }
 
-        private void btnEntrar_Click(object sender, RoutedEventArgs e)
+        private async void btnEntrar_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                Session session = session = Login.Validar(txtMatricula.Text, pwdSenha.Password);
+                Session session = await Login.Validar(txtMatricula.Text, pwdSenha.Password);
             }
             catch (Exception ex)
             {

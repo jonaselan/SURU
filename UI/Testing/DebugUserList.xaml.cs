@@ -26,20 +26,24 @@ namespace UI.Testing
             InitializeComponent();
         }
 
-        private List<ItemComposto> GetDB() {
+        private async Task<List<ItemComposto>> GetDB() {
+           
             UsuarioBLL usuariobll = new UsuarioBLL();
             PerfilBLL perfillbll = new PerfilBLL();
-            List<Usuario> usrs = usuariobll.Listar();
-            List<Perfil> perfis = perfillbll.Listar();
+            TelefoneBLL telefonebll = new TelefoneBLL();
+            EmailBLL emailbll = new EmailBLL();
+            List<Usuario> usrs = await usuariobll.Listar();
             ItemComposto itemcomposto;
             List<ItemComposto> combined = new List<ItemComposto>();
-            foreach (Perfil p in perfis) {
-                foreach (Usuario u in usrs.Where(us => us.IdPerfil == p.Id)) {
-                    itemcomposto = new ItemComposto();
-                    itemcomposto.Item1 = u;
-                    itemcomposto.Item2 = p;
-                    combined.Add(itemcomposto);
-                }
+            foreach (Usuario u in usrs) {
+                itemcomposto = new ItemComposto();
+                itemcomposto.Item1 = u;
+                itemcomposto.Item2 = await perfillbll.ConsultarPorId(u.ID_PERFIL);
+                List<Telefone> listatelefones = await telefonebll.TelefonesPerfilId(u.ID_PERFIL);
+                List<Email> listaemails = await emailbll.EmailsPerfilId(u.ID_PERFIL);
+                if (listatelefones.Count != 0) { itemcomposto.Item3 = listatelefones[0]; }
+                if (listaemails.Count != 0) { itemcomposto.Item4 = listaemails[0]; }
+                combined.Add(itemcomposto);
             }
             return combined;
         }
@@ -54,14 +58,15 @@ namespace UI.Testing
             btnSelecionar.IsEnabled = true;
         }
 
-        private void DebugUserListWindow_Loaded(object sender, RoutedEventArgs e)
+        private async void DebugUserListWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            dgUsuarios.ItemsSource = GetDB();
+            UsuarioBLL bll = new UsuarioBLL();
+            dgUsuarios.ItemsSource = await GetDB();
         }
 
         private void dgUsuarios_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-
+            
         }
     }
 }

@@ -24,45 +24,47 @@ namespace UI.Testing
         public DebugUser()
         {
             InitializeComponent();
+            ConsoleManager.Show();
         }
 
-        private void btnSelecionar_Click(object sender, RoutedEventArgs e)
+        private async void btnSelecionar_Click(object sender, RoutedEventArgs e)
         {
             DebugUserList listwindow = new DebugUserList();
             if (listwindow.ShowDialog() == true)
             {
                 Usuario usr = (Usuario)listwindow.dgUsuarios.SelectedItem;
                 PerfilBLL pbll = new PerfilBLL();
-                Perfil p = pbll.ConsultarPorId(usr.IdPerfil);
-                txtMatricula.Text = usr.Matricula;
-                pwdSenha.Password = usr.Senha;
-                chkAdmin.IsChecked = usr.IsAdm;
-                txtNome.Text = p.Nome;
-                txtTelefone.Text = p.Telefone;
-                txtEmail.Text = p.Email;
+                Perfil p = await pbll.ConsultarPorId(usr.ID_PERFIL);
+                txtMatricula.Text = usr.MATRICULA;
+                pwdSenha.Password = usr.SENHA;
+                usr.ISADM = (bool)chkAdmin.IsChecked ? 1 : 0;
+                txtNome.Text = p.NOME;
+                /*txtTelefone.Text = p.Telefone;
+                txtEmail.Text = p.Email;*/
             }
         }
 
-        private void btnInsAlt_Click(object sender, RoutedEventArgs e)
+        private async void btnInsAlt_Click(object sender, RoutedEventArgs e)
         {
             Usuario usr = new Usuario();
             UsuarioBLL db_usr = new UsuarioBLL();
             PerfilBLL db_pf = new PerfilBLL();
             Perfil p = new Perfil(); ;
-            usr.Matricula = txtMatricula.Text;
-            usr.Senha = pwdSenha.Password;
-            usr.IsAdm = (bool) chkAdmin.IsChecked;
-            p.Nome = txtNome.Text;
-            p.Telefone = txtTelefone.Text;
-            p.Email = txtEmail.Text;
-            Usuario usr_match = db_usr.ConsultarPorMatricula(txtMatricula.Text);
+            usr.MATRICULA = txtMatricula.Text;
+            usr.SENHA = pwdSenha.Password;
+            usr.ISADM = (bool)chkAdmin.IsChecked ? 1 : 0;
+            p.NOME = txtNome.Text;
+           /*p.Telefone = txtTelefone.Text;
+            p.Email = txtEmail.Text;*/
+            Usuario usr_match = await db_usr.ConsultarPorMatricula(txtMatricula.Text);
             if (usr_match == null)
             {
                 try
                 {
-                    usr.Id = db_usr.Listar().Count() + 1;                 
-                    p.Id = db_pf.Listar().Count + 1;
-                    usr.IdPerfil = p.Id;
+                    var list = await db_usr.Listar();
+                    var list2 = await db_pf.Listar();
+                    usr.ID = list.Count();
+                    p.ID = list2.Count();
                     db_usr.Inserir(usr, p);
                 }
                 catch (Exception ex)
@@ -74,8 +76,7 @@ namespace UI.Testing
             {
                 try
                 {
-                    usr.Id = usr_match.Id;
-                    usr.IdPerfil = usr_match.IdPerfil;
+                    usr.ID_PERFIL = usr_match.ID_PERFIL;
                     db_usr.Alterar(usr, p);
                 }
                 catch (Exception ex)
@@ -106,7 +107,7 @@ namespace UI.Testing
         {
             Usuario usr = new Usuario();
             UsuarioBLL db_usr = new UsuarioBLL();
-            usr.Matricula = txtMatricula.Text;
+            usr.MATRICULA = txtMatricula.Text;
             try
             {
                 db_usr.Remover(usr);
