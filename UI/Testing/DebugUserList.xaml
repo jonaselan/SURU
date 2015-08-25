@@ -6,56 +6,59 @@
         xmlns:local="clr-namespace:UI.Testing"
         mc:Ignorable="d"
         x:Name="DebugUserListWindow"
-        Title="Usuários" Height="305.042" Width="321.008" Background="#FFE4E4E4" Loaded="DebugUserListWindow_Loaded">
+        Title="Usuários" SizeToContent="WidthAndHeight" Background="#FFE4E4E4" Loaded="DebugUserListWindow_Loaded" ResizeMode="NoResize" Icon="SIconeDebug.ico">
     <Grid>
         <!--
         <ListBox x:Name="listUsuarios" HorizontalAlignment="Left" Height="217" Margin="10,10,0,0" VerticalAlignment="Top" Width="272" SelectionChanged="listUsuarios_Selected"/>
         -->
         <StackPanel>
-            <Grid>
-                <DataGrid x:Name="dgUsuarios" IsReadOnly="True" AutoGenerateColumns="False" SelectedCellsChanged="dgUsuarios_SelectedCellsChanged">
-                    <DataGrid.Columns>
-                        <DataGridTemplateColumn Header="ID">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Item1.ID}"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="Matrícula">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Item1.MATRICULA}"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="Nome">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Item2.NOME}"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="Telefone">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Item3.NUMERO}"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="Email">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Item4.ENDERECO}"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </Grid>
-            <Grid>
-                <Button x:Name="btnSelecionar" Content="Selecionar" HorizontalAlignment="Left" Margin="10,239,0,0" VerticalAlignment="Top" Width="75" IsDefault="True" Click="btnSelecionar_Click" Background="White" BorderBrush="#FFAAAAAA" IsEnabled="False"/>
-                <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="90,239,0,0" VerticalAlignment="Top" Width="75" IsCancel="True" Background="White" BorderBrush="#FFAAAAAA"/>
+            <DataGrid x:Name="dgUsuarios" CanUserResizeColumns="False" CanUserResizeRows="False" IsReadOnly="True" AutoGenerateColumns="False" SelectedCellsChanged="dgUsuarios_SelectedCellsChanged" Margin="10" HorizontalAlignment="Center" SelectionUnit="FullRow" SelectionMode="Single" RowHeaderWidth="0">
+                <DataGrid.CellStyle>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                    </Style>
+                </DataGrid.CellStyle>
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="ID" Width="40">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Item1.ID}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Matrícula" Width="130">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Item1.MATRICULA}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Nome" Width="220">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Item2.NOME}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Telefone" Width="150">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Item3.NUMERO}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Email" Width="220">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Item4.ENDERECO}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Margin="10,0,0,10">
+                <Button x:Name="btnSelecionar" Content="Selecionar" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="75" IsDefault="True" Click="btnSelecionar_Click" Background="White" BorderBrush="#FFAAAAAA" IsEnabled="False"/>
+                <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="90,0,0,0" VerticalAlignment="Top" Width="75" IsCancel="True" Background="White" BorderBrush="#FFAAAAAA"/>
             </Grid>
         </StackPanel>
     </Grid>

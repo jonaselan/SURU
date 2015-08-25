@@ -1,16 +1,14 @@
 ﻿using System.Collections.Generic;
 using LinqToDB;
 using System.Linq;
-using DTO;
-using DAL;
 using System.Threading.Tasks;
 using System;
 
 namespace BLL
 {
-    public class TelefoneBLL : ITelefone, IDBElement<Telefone>
+    public class Telefone : ITelefone, IDBElement<DTO.Telefone>
     {
-        public void Alterar(Telefone t)
+        public void Alterar(DTO.Telefone t)
         {
             ///* RETIRANDO OS ESPAÇOS */
             DBElementHandling.RemoverEspacos(t);
@@ -20,14 +18,14 @@ namespace BLL
 
 
             ///* CONECTANDO AO DB */
-            Database db = new Database();
+            DAL.Database db = new DAL.Database();
             db.Update(t);
         }
 
-        public async Task<Telefone> ConsultarPorId(long id)
+        public async Task<DTO.Telefone> ConsultarPorId(long id)
         {
-            Telefone tel = null;
-            using (var db = new UsuariosDB())
+            DTO.Telefone tel = null;
+            using (var db = new DTO.Database())
             {
                 var q = from e in db.TB_TELEFONES
                         where e.ID == id
@@ -37,7 +35,7 @@ namespace BLL
             return tel;
         }
 
-        public void Inserir(Telefone t)
+        public void Inserir(DTO.Telefone t)
         {
             ///* RETIRANDO OS ESPAÇOS */
             DBElementHandling.RemoverEspacos(t);
@@ -47,34 +45,34 @@ namespace BLL
 
 
             ///* CONECTANDO AO DB */
-            Database db = new Database();
+            DAL.Database db = new DAL.Database();
             db.Insert(t);
         }
 
-        public void IsValido(Telefone e)
+        public void IsValido(DTO.Telefone e)
         {
             
         }
 
-        public async Task<List<Telefone>> Listar()
+        public async Task<List<DTO.Telefone>> Listar()
         {
-            Database db = new Database();
-            var table = db.Select<Telefone>();
+            DAL.Database db = new DAL.Database();
+            var table = db.Select<DTO.Telefone>();
             return await table.ToListAsync(); ;
         }
 
-        public void Remover(Telefone t)
+        public void Remover(DTO.Telefone t)
         {
             ///* RETIRANDO OS ESPAÇOS */
             DBElementHandling.RemoverEspacos(t);
-            Database db = new Database();
+            DAL.Database db = new DAL.Database();
             db.Delete(t);
         }
 
-        public async Task<List<Telefone>> TelefonesPerfilId(long id)
+        public async Task<List<DTO.Telefone>> TelefonesPerfilId(long id)
         {
-            List<Telefone> tel = null;
-            using (var db = new UsuariosDB())
+            List<DTO.Telefone> tel = null;
+            using (var db = new DTO.Database())
             {
                 var q = from e in db.TB_TELEFONES
                         where e.ID == id

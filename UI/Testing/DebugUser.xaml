@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:UI.Testing"
         mc:Ignorable="d"
         Icon="SIconeDebug.ico"
-        Title="Debug DB Usuário" Height="348" Width="513" Closing="Window_Closing" Background="#FFE4E4E4">
+        Title="Debug DB Usuário" Height="348" Width="513" Closing="Window_Closing" Background="#FFE4E4E4" ResizeMode="NoResize">
     <Grid>
         <GroupBox x:Name="gpUser" Header="Informações do usuário" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="112" Width="466">
             <Grid Height="92" Margin="0,0,-2,-2" VerticalAlignment="Top">
@@ -14,6 +14,21 @@
                 <TextBox x:Name="txtMatricula" HorizontalAlignment="Left" Height="23" Margin="77,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="txtMatricula_TextChanged"/>
                 <Label x:Name="lbSenha" Content="Senha:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="27,40,0,0"/>
                 <PasswordBox x:Name="pwdSenha" HorizontalAlignment="Left" Height="23" Margin="77,44,0,0" VerticalAlignment="Top" Width="120"/>
+                <TextBlock x:Name="txbSenhaClick" Text="...clique duas vezes para alterar o valor" VerticalAlignment="Top" Margin="202,44,0,0" Visibility="Hidden" Height="20" Foreground="#FF979797" FontStyle="Italic" TextDecorations="{x:Null}"/>
+                <Rectangle x:Name="rectSenha" Opacity="0" Fill="Transparent" HorizontalAlignment="Left" Height="23" Width="120" Margin="77,44,0,0" VerticalAlignment="Top" MouseLeftButtonUp="rectSenha_MouseLeftButtonUp" MouseLeftButtonDown="rectSenha_MouseLeftButtonDown">
+                    <Rectangle.Style>
+                        <Style TargetType="Rectangle">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=pwdSenha, Path=IsEnabled}" Value="False">
+                                    <Setter Property="Cursor" Value="Hand"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=pwdSenha, Path=IsEnabled}" Value="True">
+                                    <Setter Property="Cursor" Value="IBeam"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Rectangle.Style>
+                </Rectangle>
                 <CheckBox x:Name="chkAdmin" Content="Administrador" HorizontalAlignment="Left" Margin="76,72,0,0" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>

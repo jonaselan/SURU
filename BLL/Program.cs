@@ -1,14 +1,10 @@
 ﻿using Octokit;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using DTO;
 
 namespace BLL
 {
-    public static class ProgramBLL
+    public static class Program
     {
 
         public async static Task<string> CheckVersion()
@@ -16,13 +12,13 @@ namespace BLL
             var github = new GitHubClient(new ProductHeaderValue("SURU"));
             var tags = await github.Repository.GetAllTags("jonaselan", "SURU");
             var t = tags.FirstOrDefault();
-            if (t == null) { return Program.Version; }
+            if (t == null) { return DTO.Program.Version; }
             return t.Name;
         }
 
         public async static Task<bool> IsUpToDate() {
-            Program.OnlineVersion = await CheckVersion();
-            if (Program.OnlineVersion == Program.Version) { return true; }
+            DTO.Program.OnlineVersion = await CheckVersion();
+            if (DTO.Program.OnlineVersion == DTO.Program.Version) { return true; }
             return false;
         }
     }

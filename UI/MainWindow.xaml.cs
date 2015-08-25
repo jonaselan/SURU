@@ -1,5 +1,4 @@
 ﻿/* DESCOMENTE A LINHA ABAIXO PARA ABRIR JANELA DE DB */
-#define DEBUG_DB
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,8 +17,8 @@ using UI.Aluno;
 #if DEBUG_DB
 using UI.Testing;
 #endif
-using DTO;
 using BLL;
+using BLL.AcessoDB;
 
 namespace UI
 {
@@ -34,10 +33,9 @@ namespace UI
             string executable = System.Reflection.Assembly.GetExecutingAssembly().Location;
             string path = (System.IO.Path.GetDirectoryName(executable));
             AppDomain.CurrentDomain.SetData("DataDirectory", path);
+            Database.Acess();
             InitializeComponent();
-            /*
-                DESCOMENTE A LINHA ABAIXO PARA ABRIR DB_DEBUG
-            */
+//DESCOMENTE A LINHA ABAIXO PARA ABRIR DB_DEBUG
 #if DEBUG_DB
             DebugUser janelaDBDebug = new DebugUser();
             janelaDBDebug.Show();
@@ -48,7 +46,7 @@ namespace UI
         {
             try
             {
-                Session session = await Login.Validar(txtMatricula.Text, pwdSenha.Password);
+                DTO.Session session = await Login.Validar(txtMatricula.Text, pwdSenha.Password);
             }
             catch (Exception ex)
             {
@@ -103,19 +101,19 @@ namespace UI
 
         public string ProgramVersion
         {
-            get { return Program.Version; }
+            get { return DTO.Program.Version; }
         }
 
         private async void LoginWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            bool uptodate = await ProgramBLL.IsUpToDate();
+            bool uptodate = await BLL.Program.IsUpToDate();
             if (uptodate)
             {
                 txbGit.Text = "Nenhuma atualização pendente.";
             }
             else
             {
-                txbGit.Text = "Versão nova disponível: "+Program.OnlineVersion;
+                txbGit.Text = "Versão nova disponível: "+ DTO.Program.OnlineVersion;
                 txbGit.Cursor = Cursors.Hand;
                 txbGit.MouseLeftButtonUp += txbGit_MouseLeftButtonUp;
             }

@@ -1,16 +1,14 @@
 ﻿using System.Collections.Generic;
 using LinqToDB;
 using System.Linq;
-using DTO;
-using DAL;
 using System.Threading.Tasks;
 using System;
 
 namespace BLL
 {
-    public class EmailBLL : IEmail, IDBElement<Email>
+    public class Email : IEmail, IDBElement<DTO.Email>
     {
-        public void Alterar(Email e)
+        public void Alterar(DTO.Email e)
         {
             ///* RETIRANDO OS ESPAÇOS */
             DBElementHandling.RemoverEspacos(e);
@@ -20,14 +18,14 @@ namespace BLL
 
 
             ///* CONECTANDO AO DB */
-            Database db = new Database();
+            DAL.Database db = new DAL.Database();
             db.Update(e);
         }
 
-        public async Task<Email> ConsultarPorId(long id)
+        public async Task<DTO.Email> ConsultarPorId(long id)
         {
-            Email eml = null;
-            using (var db = new UsuariosDB())
+            DTO.Email eml = null;
+            using (var db = new DTO.Database())
             {
                 var q = from e in db.TB_EMAILS
                         where e.ID == id
@@ -37,10 +35,10 @@ namespace BLL
             return eml;
         }
 
-        public async Task<List<Email>> EmailsPerfilId(long id)
+        public async Task<List<DTO.Email>> EmailsPerfilId(long id)
         {
-            List<Email> eml = null;
-            using (var db = new UsuariosDB())
+            List<DTO.Email> eml = null;
+            using (var db = new DTO.Database())
             {
                 var q = from e in db.TB_EMAILS
                         where e.ID == id
@@ -51,7 +49,7 @@ namespace BLL
             return eml;
         }
 
-        public void Inserir(Email e)
+        public void Inserir(DTO.Email e)
         {
             ///* RETIRANDO OS ESPAÇOS */
             DBElementHandling.RemoverEspacos(e);
@@ -61,24 +59,24 @@ namespace BLL
 
 
             ///* CONECTANDO AO DB */
-            Database db = new Database();
+            DAL.Database db = new DAL.Database();
             db.Insert(e);
         }
 
-        public void IsValido(Email e) { }
+        public void IsValido(DTO.Email e) { }
 
-        public async Task<List<Email>> Listar()
+        public async Task<List<DTO.Email>> Listar()
         {
-            Database db = new Database();
-            var table = db.Select<Email>();
+            DAL.Database db = new DAL.Database();
+            var table = db.Select<DTO.Email>();
             return await table.ToListAsync(); ;
         }
 
-        public void Remover(Email e)
+        public void Remover(DTO.Email e)
         {
             ///* RETIRANDO OS ESPAÇOS */
             DBElementHandling.RemoverEspacos(e);
-            Database db = new Database();
+            DAL.Database db = new DAL.Database();
             db.Delete(e);
         }
     }

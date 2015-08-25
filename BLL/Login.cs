@@ -1,8 +1,5 @@
 ﻿using DTO;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace BLL
@@ -10,8 +7,8 @@ namespace BLL
     public static class Login
     {
         public async static Task<Session> Validar(string m, string s) {
-            UsuarioBLL usrbll = new UsuarioBLL();
-            Usuario usr = await usrbll.ConsultarPorMatricula(m);
+            Usuario usrbll = new Usuario();
+            DTO.Usuario usr = await usrbll.ConsultarPorMatricula(m);
             s = DBElementHandling.Hash(s);
             if(usr == null) { throw new Exception("Matrícula ou Senha inválida."); }
             if (s != usr.SENHA) { throw new Exception("Matrícula ou Senha inválida."); }

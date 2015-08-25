@@ -1,14 +1,10 @@
-﻿using DTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace BLL
 {
     interface ITelefone
     {
-        Task<List<Telefone>> TelefonesPerfilId(long id);
+        Task<List<DTO.Telefone>> TelefonesPerfilId(long id);
     }
 }

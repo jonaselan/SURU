@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DTO;
+﻿using System.Threading.Tasks;
 
 namespace BLL
 {
-    /* 
-    INTERFACE do usuário
-        404 ?
-     */
     interface IUsuario
     {
-        Task<Usuario> ConsultarPorMatricula(string matricula);
-        void Inserir(Usuario u, Perfil p);
-        void Alterar(Usuario u, Perfil p);
+        Task<DTO.Usuario> ConsultarPorMatricula(string matricula);
+        void Inserir(DTO.Usuario u, DTO.Perfil p);
+        void Alterar(DTO.Usuario u, DTO.Perfil p, bool hashSenha);
     }
 }

@@ -31,6 +31,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'D2|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\D2\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
@@ -74,18 +83,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcessoDB\Database.cs" />
     <Compile Include="ConsoleManager.cs" />
     <Compile Include="AcessoDB\DBElementHandling.cs" />
-    <Compile Include="AcessoDB\EmailBLL.cs" />
+    <Compile Include="AcessoDB\Email.cs" />
     <Compile Include="AcessoDB\Interfaces\IDBElement.cs" />
     <Compile Include="AcessoDB\Interfaces\IEmail.cs" />
     <Compile Include="AcessoDB\Interfaces\IPerfil.cs" />
     <Compile Include="AcessoDB\Interfaces\ITelefone.cs" />
     <Compile Include="Login.cs" />
-    <Compile Include="AcessoDB\PerfilBLL.cs" />
-    <Compile Include="ProgramBLL.cs" />
-    <Compile Include="AcessoDB\TelefoneBLL.cs" />
-    <Compile Include="AcessoDB\UsuarioBLL.cs" />
+    <Compile Include="AcessoDB\Perfil.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="AcessoDB\Telefone.cs" />
+    <Compile Include="AcessoDB\Usuario.cs" />
     <Compile Include="AcessoDB\Interfaces\IUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

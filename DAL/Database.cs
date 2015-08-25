@@ -1,12 +1,14 @@
 ﻿using DTO;
 using LinqToDB;
+using System;
+using System.ComponentModel;
 
 namespace DAL
 {
     public class Database
     {
-        public static void Acess() {
-            using (var db = new UsuariosDB())
+        public static void Create() {
+            using (var db = new DTO.Database())
             {
                 try
                 {
@@ -22,9 +24,8 @@ namespace DAL
         }
         public ITable<T> Select<T>() where T : class
         {
-            Acess();
             ITable<T> selection;
-            using (var db = new UsuariosDB()) {
+            using (var db = new DTO.Database()) {
                 selection = db.GetTable<T>();
             }
             return selection;
@@ -32,24 +33,21 @@ namespace DAL
 
         public void Insert<T>(T element)
         {
-            Acess();
-            using (var db = new UsuariosDB()) {
+            using (var db = new DTO.Database()) {
                 db.Insert(element);
             }
         }
 
         public void Update<T>(T element)
         {
-            Acess();
-            using (var db = new UsuariosDB()) {
+            using (var db = new DTO.Database()) {
                 db.Update(element);
             }
         }
 
         public void Delete<T>(T element)
         {
-            Acess();
-            using (var db = new UsuariosDB()) {
+            using (var db = new DTO.Database()) {
                 db.Delete(element);
             }
         }

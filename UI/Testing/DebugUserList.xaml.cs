@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DTO;
-using BLL;
 
 namespace UI.Testing
 {
@@ -28,21 +27,21 @@ namespace UI.Testing
 
         private async Task<List<ItemComposto>> GetDB() {
            
-            UsuarioBLL usuariobll = new UsuarioBLL();
-            PerfilBLL perfillbll = new PerfilBLL();
-            TelefoneBLL telefonebll = new TelefoneBLL();
-            EmailBLL emailbll = new EmailBLL();
-            List<Usuario> usrs = await usuariobll.Listar();
+            BLL.Usuario usuariobll = new BLL.Usuario();
+            BLL.Perfil perfillbll = new BLL.Perfil();
+            BLL.Telefone telefonebll = new BLL.Telefone();
+            BLL.Email emailbll = new BLL.Email();
             ItemComposto itemcomposto;
             List<ItemComposto> combined = new List<ItemComposto>();
-            foreach (Usuario u in usrs) {
+
+            foreach (Usuario u in await usuariobll.Listar()) {
                 itemcomposto = new ItemComposto();
                 itemcomposto.Item1 = u;
                 itemcomposto.Item2 = await perfillbll.ConsultarPorId(u.ID_PERFIL);
                 List<Telefone> listatelefones = await telefonebll.TelefonesPerfilId(u.ID_PERFIL);
                 List<Email> listaemails = await emailbll.EmailsPerfilId(u.ID_PERFIL);
-                if (listatelefones.Count != 0) { itemcomposto.Item3 = listatelefones[0]; }
-                if (listaemails.Count != 0) { itemcomposto.Item4 = listaemails[0]; }
+                itemcomposto.Item3 = listatelefones.FirstOrDefault();
+                itemcomposto.Item4 = listaemails.FirstOrDefault();
                 combined.Add(itemcomposto);
             }
             return combined;
@@ -60,13 +59,13 @@ namespace UI.Testing
 
         private async void DebugUserListWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            UsuarioBLL bll = new UsuarioBLL();
+            BLL.Usuario bll = new BLL.Usuario();
             dgUsuarios.ItemsSource = await GetDB();
         }
 
         private void dgUsuarios_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            
+            btnSelecionar.IsEnabled = true;
         }
     }
 }
