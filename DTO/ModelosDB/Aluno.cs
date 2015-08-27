@@ -1,6 +1,8 @@
 ﻿namespace DTO
 {
-    /* Modelo de Aluno, aqui ficara as informações bolsista, diaria, etc. */
+    /// <summary>
+    /// Modelo de Aluno
+    /// </summary>
     class Aluno : Perfil
     {
 

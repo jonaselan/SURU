@@ -52,7 +52,7 @@ namespace UI.Testing
                 pwdSenha.Password = usr.SENHA;
                 pwdSenha.IsEnabled = false;
                 pwdSenha.Cursor = Cursors.Hand;
-                chkAdmin.IsChecked = usr.ISADM == 1 ? true : false;
+                chkAdmin.IsChecked = usr.ISADM;
                 txtNome.Text = p.NOME;
                 /*txtTelefone.Text = p.Telefone;
                 txtEmail.Text = p.Email;*/
@@ -68,7 +68,7 @@ namespace UI.Testing
             DTO.Perfil p = new DTO.Perfil(); ;
             usr.MATRICULA = txtMatricula.Text;
             usr.SENHA = pwdSenha.Password;
-            usr.ISADM = (bool)chkAdmin.IsChecked ? 1 : 0;
+            usr.ISADM = (bool)chkAdmin.IsChecked;
             p.NOME = txtNome.Text;
             /*p.Telefone = txtTelefone.Text;
              p.Email = txtEmail.Text;*/

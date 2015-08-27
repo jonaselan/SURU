@@ -3,6 +3,9 @@ using System;
 
 namespace DTO
 {
+    /// <summary>
+    /// Modelo de Telefone
+    /// </summary>
     [Table("TB_TELEFONES")]
     public partial class Telefone
     {

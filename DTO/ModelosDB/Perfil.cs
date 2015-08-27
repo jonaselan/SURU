@@ -3,6 +3,9 @@ using System;
 
 namespace DTO
 {
+    /// <summary>
+    /// Modelo de Perfil
+    /// </summary>
     [Table("TB_PERFIS")]
     public partial class Perfil
     {

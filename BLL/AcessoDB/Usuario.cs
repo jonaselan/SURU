@@ -6,10 +6,17 @@ using System;
 
 namespace BLL
 {
+    /// <summary>
+    /// Lógica de interação do modelo de <typeparamref name="Usuario"/>
+    /// </summary>
     public class Usuario : IUsuario, IDBElement<DTO.Usuario>
     {
 
         #region Métodos de BUSCA
+        /// <summary>
+        /// Lista todos os usuários do banco de dados.
+        /// </summary>
+        /// <returns>Um <typeparamref name="Task"/> contendo a listagem dos usuários no banco de dados.</returns>
         public async Task<List<DTO.Usuario>> Listar()
         {
             DAL.Database db = new DAL.Database();
@@ -17,6 +24,14 @@ namespace BLL
             return await table.ToListAsync(); ;
         }
 
+        /// <summary>
+        /// Procura um <typeparamref name="Usuario"/> no banco dedados com as propriedades fornecidas.
+        /// </summary>
+        /// <param name="ID">Id do <typeparamref name="Usuario"/> a ser procurado.</param>
+        /// <param name="MATRICULA">Matricula do <typeparamref name="Usuario"/> a ser procurado.</param>
+        /// <param name="SENHA">Senha do <typeparamref name="Usuario"/> a ser procurado.</param>
+        /// <param name="ID_PERFIL">Id do <typeparamref name="Perfil"/> que pertence ao <typeparamref name="Usuario"/> a ser procurado.</param>
+        /// <returns>Um <typeparamref name="Task"/> contendo o resultado da busca.</returns>
         public async Task<DTO.Usuario> Procurar(long ID = -1, string MATRICULA = null, string SENHA = null, long ID_PERFIL = -1)
         {
             DTO.Usuario usr = null;
@@ -33,6 +48,11 @@ namespace BLL
             return usr;
         }
 
+        /// <summary>
+        /// Procura um <typeparamref name="Usuario"/> no banco de dados de acordo com a matricula fornecida
+        /// </summary>
+        /// <param name="matricula">Matricula do <typeparamref name="Usuario"/> a ser consultado.</param>
+        /// <returns>Um <typeparamref name="Task"/> com o <typeparamref name="Usuario"/> encontrado.</returns>
         public async Task<DTO.Usuario> ConsultarPorMatricula(string matricula)
         {
             DTO.Usuario usr = null;
@@ -46,6 +66,11 @@ namespace BLL
             return usr;
         }
 
+        /// <summary>
+        /// Procura um <typeparamref name="Usuario"/> no banco de dados de acordo com o id fornecido
+        /// </summary>
+        /// <param name="id">Id do <typeparamref name="Usuario"/> a ser consultado.</param>
+        /// <returns>Um <typeparamref name="Task"/> com o <typeparamref name="Usuario"/> encontrado.</returns>
         public async Task<DTO.Usuario> ConsultarPorId(long id)
         {
             DTO.Usuario usr = null;
@@ -85,22 +110,22 @@ namespace BLL
 
         public void Alterar(DTO.Usuario u, DTO.Perfil p, bool hashSenha = true)
         {
-            //* RETIRANDO OS ESPAÇOS */
-            //DBElementHandling.RemoverEspacos(u);
+            // RETIRANDO OS ESPAÇOS
+            DBElementHandling.RemoverEspacos(u);
 
-            //* CHECAGEM DOS VALORES INSERIDOS */
+            // CHECAGEM DOS VALORES INSERIDOS
             try { IsValido(u); } catch (Exception ex) { throw ex; }
 
             // HASH DA SENHA
             if (hashSenha)
                 u.SENHA = DBElementHandling.Hash(u.SENHA);
 
-            //* TENTAR ALTERAR O PERFIL */
+            // TENTAR ALTERAR O PERFIL
             Perfil pbll = new Perfil();
 
             try { pbll.Alterar(p); } catch (Exception ex) { throw ex; }
 
-            //* CONECTANDO AO DB */
+            // CONECTANDO AO DB
             DAL.Database db = new DAL.Database();
             db.Update(u);
         }
