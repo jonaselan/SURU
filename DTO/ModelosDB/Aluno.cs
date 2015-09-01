@@ -1,10 +1,16 @@
-﻿namespace DTO
+﻿using LinqToDB.Mapping;
+using System;
+
+namespace DTO
 {
     /// <summary>
     /// Modelo de Aluno
     /// </summary>
-    class Aluno : Perfil
+    [Table("TB_ALUNOS")]
+    public class Aluno : Perfil
     {
-
+        [Column, Nullable]
+        public string TIPO { get; set; }
     }
+    
 }

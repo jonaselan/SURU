@@ -7,7 +7,7 @@ namespace DTO
     public partial class Database : LinqToDB.Data.DataConnection
     {
         public ITable<Email> TB_EMAILS { get { return this.GetTable<Email>(); } }
-        public ITable<Perfil> TB_PERFIS { get { return this.GetTable<Perfil>(); } }
+        public ITable<Aluno> TB_ALUNOS { get { return this.GetTable<Aluno>(); } }
         public ITable<Telefone> TB_TELEFONES { get { return this.GetTable<Telefone>(); } }
         public ITable<Usuario> TB_USUARIOS { get { return this.GetTable<Usuario>(); } }
 
@@ -33,7 +33,7 @@ namespace DTO
                 t.ID == ID);
         }
 
-        public static Perfil Find(this ITable<Perfil> table, long ID)
+        public static Aluno Find(this ITable<Aluno> table, long ID)
         {
             return table.FirstOrDefault(t =>
                 t.ID == ID);

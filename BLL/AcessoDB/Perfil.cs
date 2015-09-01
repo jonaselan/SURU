@@ -23,7 +23,7 @@ namespace BLL
             DTO.Perfil perf = null;
             using (var db = new DTO.Database())
             {
-                var q = from p in db.TB_PERFIS
+                var q = from p in db.TB_ALUNOS
                         where p.ID == id
                         select p;
                 perf = await q.FirstOrDefaultAsync();
@@ -41,7 +41,7 @@ namespace BLL
             DTO.Perfil perf = null;
             using (var db = new DTO.Database())
             {
-                var q = from p in db.TB_PERFIS
+                var q = from p in db.TB_ALUNOS
                         where p.NOME == nome
                         select p;
                 perf = await q.FirstOrDefaultAsync();

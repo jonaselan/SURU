@@ -6,7 +6,7 @@ namespace DTO
     /// <summary>
     /// Modelo de Perfil
     /// </summary>
-    [Table("TB_PERFIS")]
+    //[Table("TB_PERFIS")]
     public partial class Perfil
     {
         [PrimaryKey, NotNull]

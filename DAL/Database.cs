@@ -18,7 +18,7 @@ namespace DAL
                 catch {
                     return;
                 }
-                db.CreateTable<Perfil>();
+                db.CreateTable<Aluno>();
                 db.CreateTable<Email>();
                 db.CreateTable<Telefone>();
             }
