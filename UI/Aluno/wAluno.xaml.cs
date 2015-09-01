@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,23 @@ namespace UI.Aluno
     /// </summary>
     public partial class wAluno : Window
     {
-        public wAluno()
+        private Session s;
+        private DTO.Aluno aluno;
+        public wAluno(Session s)
         {
             InitializeComponent();
+            this.s = s;
+        }
+        public async Task<DTO.Aluno> GetAluno(Session s) {
+            BLL.Usuario usrbll = new BLL.Usuario();
+            DTO.Aluno a = (DTO.Aluno)await usrbll.GetPerfil(s.User);
+            return a;
+        }
+
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            aluno = await GetAluno(s);
+            txbNome.Text = aluno.NOME;
         }
     }
 }

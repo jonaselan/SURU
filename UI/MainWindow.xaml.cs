@@ -44,9 +44,10 @@ namespace UI
 
         private async void btnEntrar_Click(object sender, RoutedEventArgs e)
         {
+            DTO.Session session;
             try
             {
-                DTO.Session session = await Login.Validar(txtMatricula.Text, pwdSenha.Password);
+                session = await Login.Validar(txtMatricula.Text, pwdSenha.Password);
             }
             catch (Exception ex)
             {
@@ -55,7 +56,7 @@ namespace UI
             }
             /* Função acima retorna um objeto da classe Session que pode ser acessado para obter o usuario da sessão atual */
             /* JONATHAN - Não mexi em nada abaixo */
-            wAluno telaAluno = new wAluno();
+            wAluno telaAluno = new wAluno(session);
             this.Close();
             telaAluno.ShowDialog();
         }

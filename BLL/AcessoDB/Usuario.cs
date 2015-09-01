@@ -68,7 +68,7 @@ namespace BLL
         #endregion
 
         #region Métodos de MANIPULAÇÃO de dados
-        public void Inserir(DTO.Usuario u, ref DTO.Perfil p)
+        public void Inserir(DTO.Usuario u, DTO.Aluno p)
         {
 
             ///* RETIRANDO OS ESPAÇOS */
@@ -82,23 +82,39 @@ namespace BLL
             u.SENHA = DBElementHandling.Hash(u.SENHA);
 
             // TENTAR INSERIR O PERFIL
-            if (u.ISADM)
-            {
-                Administrador abll = new Administrador();
-                try { abll.Inserir(p as DTO.Administrador); } catch (Exception ex) { throw ex; }
-            }
-            else
-            {
-                Aluno abll = new Aluno();
-                try { abll.Inserir(p as DTO.Aluno); } catch (Exception ex) { throw ex; }
-            }
+            Aluno abll = new Aluno();
+            try { abll.Inserir(p); } catch (Exception ex) { throw ex; }
 
             ///* CONECTANDO AO DB */
             DAL.Database db = new DAL.Database();
             db.Insert(u);
         }
 
-        public void Alterar(DTO.Usuario u, ref DTO.Perfil p, bool hashSenha = true)
+        public void Inserir(DTO.Usuario u, DTO.Administrador p)
+        {
+
+            ///* RETIRANDO OS ESPAÇOS */
+            DBElementHandling.RemoverEspacos(u);
+
+            ///* CHECAGEM DOS VALORES INSERIDOS */
+
+            try { IsValido(u); }
+            catch (Exception ex) { throw ex; }
+
+            ///* HASH DA SENHA */
+            u.SENHA = DBElementHandling.Hash(u.SENHA);
+
+            // TENTAR INSERIR O PERFIL
+            Administrador abll = new Administrador();
+            try { abll.Inserir(p); }
+            catch (Exception ex) { throw ex; }
+
+            ///* CONECTANDO AO DB */
+            DAL.Database db = new DAL.Database();
+            db.Insert(u);
+        }
+
+        public void Alterar(DTO.Usuario u, DTO.Administrador p, bool hashSenha = true)
         {
             // RETIRANDO OS ESPAÇOS
             DBElementHandling.RemoverEspacos(u);
@@ -111,16 +127,31 @@ namespace BLL
                 u.SENHA = DBElementHandling.Hash(u.SENHA);
 
             // TENTAR ALTERAR O PERFIL
-            if (u.ISADM)
-            {
-                Administrador abll = new Administrador();
-                try { abll.Alterar(p as DTO.Administrador); } catch (Exception ex) { throw ex; }
-            }
-            else
-            {
-                Aluno abll = new Aluno();
-                try { abll.Alterar(p as DTO.Aluno); } catch (Exception ex) { throw ex; }
-            }
+            Administrador abll = new Administrador();
+            try { abll.Alterar(p); } catch (Exception ex) { throw ex; }
+
+            // CONECTANDO AO DB
+            DAL.Database db = new DAL.Database();
+            db.Update(u);
+        }
+
+        public void Alterar(DTO.Usuario u, DTO.Aluno p, bool hashSenha = true)
+        {
+            // RETIRANDO OS ESPAÇOS
+            DBElementHandling.RemoverEspacos(u);
+
+            // CHECAGEM DOS VALORES INSERIDOS
+            try { IsValido(u); }
+            catch (Exception ex) { throw ex; }
+
+            // HASH DA SENHA
+            if (hashSenha)
+                u.SENHA = DBElementHandling.Hash(u.SENHA);
+
+            // TENTAR ALTERAR O PERFIL
+            Aluno abll = new Aluno();
+            try { abll.Alterar(p); }
+            catch (Exception ex) { throw ex; }
 
             // CONECTANDO AO DB
             DAL.Database db = new DAL.Database();

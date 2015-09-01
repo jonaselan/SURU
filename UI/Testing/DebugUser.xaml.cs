@@ -61,25 +61,31 @@ namespace UI.Testing
 
         private async void btnInsAlt_Click(object sender, RoutedEventArgs e)
         {
-            DTO.Usuario usr = new DTO.Usuario();
-            Perfil p;
+            DTO.Usuario usr = new DTO.Usuario(); 
+            DTO.Aluno a = new DTO.Aluno();
+            DTO.Administrador adm = new DTO.Administrador();
+            
             BLL.Usuario db_usr = new BLL.Usuario();
             BLL.Administrador db_admin = new BLL.Administrador();
             BLL.Aluno db_aluno = new BLL.Aluno();
+
             usr.MATRICULA = txtMatricula.Text;
             usr.SENHA = pwdSenha.Password;
             usr.ISADM = (bool)chkAdmin.IsChecked;
+
             /* db_usr.Procurar(from db_usr); */
 
             if (usr.ISADM)
             {
-                p = new DTO.Administrador();
+                adm.NOME = txtNome.Text;
             }
             else {
-                p = new DTO.Aluno();
+                //p = new DTO.Aluno();
+                a.NOME = txtNome.Text;
+                // ???    
             }
+            
 
-            p.NOME = txtNome.Text;
             /*p.Telefone = txtTelefone.Text;
              p.Email = txtEmail.Text;*/
             DTO.Usuario usr_match = await db_usr.ConsultarPorMatricula(txtMatricula.Text);
@@ -91,15 +97,17 @@ namespace UI.Testing
                     if (usr.ISADM)
                     {
                         var list2 = await db_admin.Listar();
-                        p.ID = list2.Count();
+                        adm.ID = list2.Count();
+                        db_usr.Inserir(usr, adm);
                     }
                     else
                     {
                         var list2 = await db_aluno.Listar();
-                        p.ID = list2.Count();
+                        a.ID = list2.Count();
+                        usr.ID_PERFIL = a.ID;
+                        db_usr.Inserir(usr, a);
                     }
-                    usr.ID_PERFIL = p.ID;
-                    db_usr.Inserir(usr, ref p);
+                    
                 }
                 catch (Exception ex)
                 {
@@ -114,8 +122,16 @@ namespace UI.Testing
                     if (DialogResult == true)
                     {
                         usr.ID_PERFIL = usr_match.ID_PERFIL;
-                        p.ID = usr.ID_PERFIL;
-                        db_usr.Alterar(usr, ref p, pwdSenha.IsEnabled);
+                        if (usr.ISADM)
+                        {
+                            adm.ID = usr.ID_PERFIL;
+                            db_usr.Alterar(usr, adm, pwdSenha.IsEnabled);
+                        }
+                        else 
+                        {
+                            a.ID = usr.ID_PERFIL;
+                            db_usr.Alterar(usr, a, pwdSenha.IsEnabled);
+                        }
                     }
                 }
                 catch (Exception ex)
