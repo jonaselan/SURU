@@ -62,13 +62,23 @@ namespace UI.Testing
         private async void btnInsAlt_Click(object sender, RoutedEventArgs e)
         {
             DTO.Usuario usr = new DTO.Usuario();
+            Perfil p;
             BLL.Usuario db_usr = new BLL.Usuario();
-           /* db_usr.Procurar(from db_usr); */
-            BLL.Perfil db_pf = new BLL.Perfil();
-            DTO.Perfil p = new DTO.Perfil(); ;
+            BLL.Administrador db_admin = new BLL.Administrador();
+            BLL.Aluno db_aluno = new BLL.Aluno();
             usr.MATRICULA = txtMatricula.Text;
             usr.SENHA = pwdSenha.Password;
             usr.ISADM = (bool)chkAdmin.IsChecked;
+            /* db_usr.Procurar(from db_usr); */
+
+            if (usr.ISADM)
+            {
+                p = new DTO.Administrador();
+            }
+            else {
+                p = new DTO.Aluno();
+            }
+
             p.NOME = txtNome.Text;
             /*p.Telefone = txtTelefone.Text;
              p.Email = txtEmail.Text;*/
@@ -78,11 +88,18 @@ namespace UI.Testing
                 try
                 {
                     var list = await db_usr.Listar();
-                    var list2 = await db_pf.Listar();
-                    usr.ID = list.Count();
-                    p.ID = list2.Count();
+                    if (usr.ISADM)
+                    {
+                        var list2 = await db_admin.Listar();
+                        p.ID = list2.Count();
+                    }
+                    else
+                    {
+                        var list2 = await db_aluno.Listar();
+                        p.ID = list2.Count();
+                    }
                     usr.ID_PERFIL = p.ID;
-                    db_usr.Inserir(usr, p);
+                    db_usr.Inserir(usr, ref p);
                 }
                 catch (Exception ex)
                 {
@@ -96,10 +113,9 @@ namespace UI.Testing
                     MessageBoxResult confirmationBox = MessageBox.Show("Sure", "Some Title", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation);
                     if (DialogResult == true)
                     {
-                        usr.ID = usr_match.ID;
                         usr.ID_PERFIL = usr_match.ID_PERFIL;
                         p.ID = usr.ID_PERFIL;
-                        db_usr.Alterar(usr, p, pwdSenha.IsEnabled);
+                        db_usr.Alterar(usr, ref p, pwdSenha.IsEnabled);
                     }
                 }
                 catch (Exception ex)

@@ -8,7 +8,8 @@ namespace BLL
     interface IUsuario
     {
         Task<DTO.Usuario> ConsultarPorMatricula(string matricula);
-        void Inserir(DTO.Usuario u, DTO.Perfil p);
-        void Alterar(DTO.Usuario u, DTO.Perfil p, bool hashSenha);
+        Task<DTO.Perfil> GetPerfil(DTO.Usuario u);
+        void Inserir(DTO.Usuario u, ref DTO.Perfil p);
+        void Alterar(DTO.Usuario u, ref DTO.Perfil p, bool hashSenha);
     }
 }

@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModelosDB\Administrador.cs" />
     <Compile Include="ModelosDB\Aluno.cs" />
     <Compile Include="ModelosDB\Email.cs" />
     <Compile Include="ItemComposto.cs" />

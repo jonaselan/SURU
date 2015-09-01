@@ -9,8 +9,6 @@ namespace DTO
     public class Usuario
     {
         [PrimaryKey, NotNull]
-        public long ID { get; set; } // integer
-        [Column, NotNull]
         public string MATRICULA { get; set; } // text(max)
         [Column, NotNull]
         public string SENHA { get; set; } // text(max)

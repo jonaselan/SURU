@@ -13,7 +13,6 @@ namespace BLL
         void Inserir(T e);
         void Alterar(T e);
         void Remover(T e);
-        Task<T> ConsultarPorId(long id);
         void IsValido(T e);
     }
 }

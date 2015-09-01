@@ -19,6 +19,7 @@ namespace DAL
                     return;
                 }
                 db.CreateTable<Aluno>();
+                db.CreateTable<Administrador>();
                 db.CreateTable<Email>();
                 db.CreateTable<Telefone>();
             }

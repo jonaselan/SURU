@@ -8,6 +8,7 @@ namespace DTO
     {
         public ITable<Email> TB_EMAILS { get { return this.GetTable<Email>(); } }
         public ITable<Aluno> TB_ALUNOS { get { return this.GetTable<Aluno>(); } }
+        public ITable<Administrador> TB_ADMINISTRADORES { get { return this.GetTable<Administrador>(); } }
         public ITable<Telefone> TB_TELEFONES { get { return this.GetTable<Telefone>(); } }
         public ITable<Usuario> TB_USUARIOS { get { return this.GetTable<Usuario>(); } }
 
@@ -39,16 +40,22 @@ namespace DTO
                 t.ID == ID);
         }
 
+        public static Administrador Find(this ITable<Administrador> table, long ID)
+        {
+            return table.FirstOrDefault(t =>
+                t.ID == ID);
+        }
+
         public static Telefone Find(this ITable<Telefone> table, long ID)
         {
             return table.FirstOrDefault(t =>
                 t.ID == ID);
         }
 
-        public static Usuario Find(this ITable<Usuario> table, long ID)
+        public static Usuario Find(this ITable<Usuario> table, string MATRICULA)
         {
             return table.FirstOrDefault(t =>
-                t.ID == ID);
+                t.MATRICULA == MATRICULA);
         }
     }
 }

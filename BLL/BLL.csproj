@@ -83,7 +83,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcessoDB\Administrador.cs" />
+    <Compile Include="AcessoDB\Aluno.cs" />
     <Compile Include="AcessoDB\Database.cs" />
+    <Compile Include="AcessoDB\Interfaces\IAdministrador.cs" />
+    <Compile Include="AcessoDB\Interfaces\IAluno.cs" />
     <Compile Include="ConsoleManager.cs" />
     <Compile Include="AcessoDB\DBElementHandling.cs" />
     <Compile Include="AcessoDB\Email.cs" />
@@ -92,7 +96,6 @@
     <Compile Include="AcessoDB\Interfaces\IPerfil.cs" />
     <Compile Include="AcessoDB\Interfaces\ITelefone.cs" />
     <Compile Include="Login.cs" />
-    <Compile Include="AcessoDB\Perfil.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="AcessoDB\Telefone.cs" />
     <Compile Include="AcessoDB\Usuario.cs" />

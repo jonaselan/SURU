@@ -2,9 +2,13 @@
 
 namespace BLL
 {
-    
-    interface IPerfil
+    /// <summary>
+    /// Implementa funcionalidade a perfis relacionados ao banco de dados.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    interface IPerfil<T>
     {
-        Task<DTO.Perfil> ConsultarPorNome(string nome);
+        Task<T> ConsultarPorID(long id);
+        Task<T> ConsultarPorNome(string nome);
     }
 }
