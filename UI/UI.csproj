@@ -81,12 +81,33 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="Adm\wAdministrador.xaml.cs">
+      <DependentUpon>wAdministrador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Adm\wCadastroUsuarios.xaml.cs">
+      <DependentUpon>wCadastroUsuarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Adm\wUsuariosList.xaml.cs">
+      <DependentUpon>wUsuariosList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Testing\DebugUser.xaml.cs">
       <DependentUpon>DebugUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="Testing\DebugUserList.xaml.cs">
       <DependentUpon>DebugUserList.xaml</DependentUpon>
     </Compile>
+    <Page Include="Adm\wAdministrador.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Adm\wCadastroUsuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Adm\wUsuariosList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Aluno\wAluno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -146,9 +167,7 @@
   <ItemGroup>
     <Resource Include="img\user.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Adm\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="SIcone.ico" />
   </ItemGroup>
@@ -167,6 +186,11 @@
       <Project>{a1ac1256-9d85-4dd1-b4a4-cefe3f82e5d1}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icon-alunos.jpg" />
+    <Resource Include="img\icon-cardapio.jpg" />
+    <Resource Include="img\icon-fila.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.98.1\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.98.1\build\net451\System.Data.SQLite.Core.targets')" />

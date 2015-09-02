@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using UI.Aluno;
+using UI.Adm;
 #if DEBUG_DB
 using UI.Testing;
 #endif
@@ -37,14 +38,15 @@ namespace UI
             InitializeComponent();
 //DESCOMENTE A LINHA ABAIXO PARA ABRIR DB_DEBUG
 #if DEBUG_DB
-            DebugUser janelaDBDebug = new DebugUser();
-            janelaDBDebug.Show();
+            //DebugUser janelaDBDebug = new DebugUser();
+            //janelaDBDebug.Show();
 #endif
         }
 
         private async void btnEntrar_Click(object sender, RoutedEventArgs e)
         {
             DTO.Session session;
+            
             try
             {
                 session = await Login.Validar(txtMatricula.Text, pwdSenha.Password);
@@ -56,9 +58,20 @@ namespace UI
             }
             /* Função acima retorna um objeto da classe Session que pode ser acessado para obter o usuario da sessão atual */
             /* JONATHAN - Não mexi em nada abaixo */
-            wAluno telaAluno = new wAluno(session);
-            this.Close();
-            telaAluno.ShowDialog();
+
+            if (session.User.ISADM)
+            {
+                wAdministrador telaAdm = new wAdministrador(session);
+                this.Close();
+                telaAdm.ShowDialog();
+            }
+            else
+            {
+                wAluno telaAluno = new wAluno(session);
+                this.Close();
+                telaAluno.ShowDialog();
+            }
+
         }
 
         private void txtMatricula_GotFocus(object sender, RoutedEventArgs e)
