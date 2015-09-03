@@ -15,6 +15,8 @@ using DTO;
 using BLL;
 using System.ComponentModel;
 using System.Windows.Threading;
+using System.Windows.Media.Animation;
+using System.Reflection;
 
 namespace UI.Testing
 {
@@ -23,15 +25,86 @@ namespace UI.Testing
     /// </summary>
     public partial class DebugUser : Window
     {
+
+        private DoubleAnimation animationDgUsuarioOpacityDown = new DoubleAnimation {
+            To = 0,
+            Duration = new Duration(TimeSpan.FromSeconds(0.3))
+        };
+
+        private DoubleAnimation animationDgUsuarioOpacityUp = new DoubleAnimation {
+            To = 1,
+            Duration = new Duration(TimeSpan.FromSeconds(0.3))
+        };
+
         public DebugUser()
         {
             InitializeComponent();
             ConsoleManager.Show();
+            animationDgUsuarioOpacityUp.Completed += new EventHandler(dgUsuario_OpacityUp);
+            animationDgUsuarioOpacityDown.Completed += new EventHandler(dgUsuario_OpacityDown);
         }
 
-        private void btnSelecionar_Click(object sender, RoutedEventArgs e)
+        void dgUsuario_OpacityUp(object sender, EventArgs e)
         {
-            DebugUserList listwindow = new DebugUserList();
+
+        }
+
+        void dgUsuario_OpacityDown(object sender, EventArgs e) {
+            dgUsuarios.MaxHeight = 0;
+        }
+
+        private async void btnSelecionar_Click(object sender, RoutedEventArgs e)
+        {
+            if (dgUsuarios.IsEnabled)
+            {
+
+                DoubleAnimation animation = new DoubleAnimation
+                {
+                    BeginTime = TimeSpan.FromSeconds(0.3),
+                    To = 360,
+                    Duration = new Duration(TimeSpan.FromSeconds(0.2)),
+                };
+
+                DoubleAnimation animationWidth = new DoubleAnimation
+                {
+                    To = 513,
+                    Duration = new Duration(TimeSpan.FromSeconds(0.2))
+                };
+                dgUsuarios.BeginAnimation(OpacityProperty, animationDgUsuarioOpacityDown);
+                BeginAnimation(WidthProperty, animationWidth);
+                BeginAnimation(HeightProperty, animation);
+                dgUsuarios.IsEnabled = false;
+                btnSelecionar.Content = "Abrir DB";
+            }
+            else
+            {
+                dgUsuarios.IsEnabled = true;
+                var db = await GetDB();
+                var count = db.Count;
+                dgUsuarios.ItemsSource = db;
+                PropertyInfo pi = dgUsuarios.GetType().GetProperty("Height", BindingFlags.NonPublic | BindingFlags.Instance);
+                dgUsuarios.MaxHeight = Double.PositiveInfinity;
+
+                DoubleAnimation animation = new DoubleAnimation
+                {
+                    To = 360 + count * 26,
+                    Duration = new Duration(TimeSpan.FromSeconds(0.2)),
+                };
+
+                DoubleAnimation animationWidth = new DoubleAnimation
+                {
+                    BeginTime = TimeSpan.FromSeconds(0.3),
+                    To = 758,
+                    Duration = new Duration(TimeSpan.FromSeconds(0.2))
+                };
+
+                dgUsuarios.BeginAnimation(OpacityProperty, animationDgUsuarioOpacityUp);
+                BeginAnimation(HeightProperty, animation);
+                BeginAnimation(WidthProperty, animationWidth);
+                DebugUserList listwindow = new DebugUserList();
+                btnSelecionar.Content = "Fechar DB";
+            }
+            /*
             if (listwindow.ShowDialog() == true)
             {
                 var composto = listwindow.dgUsuarios.SelectedItem as ItemComposto;
@@ -56,7 +129,9 @@ namespace UI.Testing
                 txtNome.Text = p.NOME;
                 /*txtTelefone.Text = p.Telefone;
                 txtEmail.Text = p.Email;*/
+                /*
             }
+            */
         }
 
         private async void btnInsAlt_Click(object sender, RoutedEventArgs e)
@@ -64,6 +139,8 @@ namespace UI.Testing
             DTO.Usuario usr = new DTO.Usuario(); 
             DTO.Aluno a = new DTO.Aluno();
             DTO.Administrador adm = new DTO.Administrador();
+            DTO.Telefone tel = new DTO.Telefone();
+            DTO.Email email = new DTO.Email();
             
             BLL.Usuario db_usr = new BLL.Usuario();
             BLL.Administrador db_admin = new BLL.Administrador();
@@ -72,6 +149,9 @@ namespace UI.Testing
             usr.MATRICULA = txtMatricula.Text;
             usr.SENHA = pwdSenha.Password;
             usr.ISADM = (bool)chkAdmin.IsChecked;
+
+            tel.NUMERO = txtTelefone.Text;
+            email.ENDERECO = txtEmail.Text;
 
             /* db_usr.Procurar(from db_usr); */
 
@@ -218,6 +298,96 @@ namespace UI.Testing
                     timer.Start();
                 }
             }
+        }
+
+        // FROM USERLIST
+
+        private async Task<List<ItemComposto>> GetDB()
+        {
+
+            BLL.Usuario usuariobll = new BLL.Usuario();
+            BLL.Telefone telefonebll = new BLL.Telefone();
+            BLL.Email emailbll = new BLL.Email();
+            ItemComposto itemcomposto;
+            List<ItemComposto> combined = new List<ItemComposto>();
+
+            foreach (DTO.Usuario u in await usuariobll.Listar())
+            {
+                itemcomposto = new ItemComposto();
+                itemcomposto.Item1 = u;
+                itemcomposto.Item2 = await usuariobll.GetPerfil(u);
+                List<DTO.Telefone> listatelefones = await telefonebll.TelefonesPerfilId(u.ID_PERFIL);
+                List<DTO.Email> listaemails = await emailbll.EmailsPerfilId(u.ID_PERFIL);
+                itemcomposto.Item3 = listatelefones.FirstOrDefault();
+                itemcomposto.Item4 = listaemails.FirstOrDefault();
+                combined.Add(itemcomposto);
+            }
+            return combined;
+        }
+
+        private void btnSelecionar2_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+        }
+
+        private void listUsuarios_Selected(object sender, RoutedEventArgs e)
+        {
+            btnSelecionar.IsEnabled = true;
+        }
+
+        private async void DebugUserListWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            BLL.Usuario bll = new BLL.Usuario();
+            dgUsuarios.ItemsSource = await GetDB();
+        }
+
+        private void dgUsuarios_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            if(dgUsuarios.SelectedItem != null)
+            {
+                var composto = dgUsuarios.SelectedItem as ItemComposto;
+                var usr = composto.Item1 as DTO.Usuario;
+                var p = composto.Item2 as DTO.Perfil;
+#if DEBUG
+                Console.WriteLine("USUÁRIO SELECIONADO:\n");
+                foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(usr))
+                {
+                    Console.WriteLine("\t{0} = {1}\n", descriptor.Name, descriptor.GetValue(usr));
+                }
+                Console.WriteLine("PERFIL SELECIONADO:\n");
+                foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(p))
+                {
+                    Console.WriteLine("\t{0} = {1}\n", descriptor.Name, descriptor.GetValue(p));
+                }
+#endif
+                txtMatricula.Text = usr.MATRICULA;
+                pwdSenha.Password = usr.SENHA;
+                pwdSenha.IsEnabled = false;
+                pwdSenha.Cursor = Cursors.Hand;
+                chkAdmin.IsChecked = usr.ISADM;
+                txtNome.Text = p.NOME;
+                /*txtTelefone.Text = p.Telefone;
+                txtEmail.Text = p.Email;*/
+            }
+
+        }
+
+        private void btnFechar_Click(object sender, RoutedEventArgs e)
+        {
+            DoubleAnimation animation = new DoubleAnimation
+            {
+                BeginTime = TimeSpan.FromSeconds(0.3),
+                To = 348,
+                Duration = new Duration(TimeSpan.FromSeconds(0.2)),
+            };
+
+            DoubleAnimation animationWidth = new DoubleAnimation
+            {
+                To = 513,
+                Duration = new Duration(TimeSpan.FromSeconds(0.2))
+            };
+            BeginAnimation(WidthProperty, animationWidth);
+            BeginAnimation(HeightProperty, animation);
         }
     }
 }

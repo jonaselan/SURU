@@ -6,45 +6,89 @@
         xmlns:local="clr-namespace:UI.Testing"
         mc:Ignorable="d"
         Icon="SIconeDebug.ico"
-        Title="Debug DB Usuário" Height="348" Width="513" Closing="Window_Closing" Background="#FFE4E4E4" ResizeMode="NoResize">
+        Title="Debug DB Usuário" Height="360" Width="513" Closing="Window_Closing" Background="#FFE4E4E4" ResizeMode="NoResize">
     <Grid>
-        <GroupBox x:Name="gpUser" Header="Informações do usuário" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="112" Width="466">
-            <Grid Height="92" Margin="0,0,-2,-2" VerticalAlignment="Top">
-                <Label x:Name="lbMatricula" Content="Matrícula:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
-                <TextBox x:Name="txtMatricula" HorizontalAlignment="Left" Height="23" Margin="77,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="txtMatricula_TextChanged"/>
-                <Label x:Name="lbSenha" Content="Senha:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="27,40,0,0"/>
-                <PasswordBox x:Name="pwdSenha" HorizontalAlignment="Left" Height="23" Margin="77,44,0,0" VerticalAlignment="Top" Width="120"/>
-                <TextBlock x:Name="txbSenhaClick" Text="...clique duas vezes para alterar o valor" VerticalAlignment="Top" Margin="202,44,0,0" Visibility="Hidden" Height="20" Foreground="#FF979797" FontStyle="Italic" TextDecorations="{x:Null}"/>
-                <Rectangle x:Name="rectSenha" Opacity="0" Fill="Transparent" HorizontalAlignment="Left" Height="23" Width="120" Margin="77,44,0,0" VerticalAlignment="Top" MouseLeftButtonUp="rectSenha_MouseLeftButtonUp" MouseLeftButtonDown="rectSenha_MouseLeftButtonDown">
-                    <Rectangle.Style>
-                        <Style TargetType="Rectangle">
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding ElementName=pwdSenha, Path=IsEnabled}" Value="False">
-                                    <Setter Property="Cursor" Value="Hand"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding ElementName=pwdSenha, Path=IsEnabled}" Value="True">
-                                    <Setter Property="Cursor" Value="IBeam"/>
-                                </DataTrigger>
-                            </Style.Triggers>
+        <StackPanel Orientation="Vertical">
+            <Grid Height="270" x:Name="gridForm">
+                <GroupBox x:Name="gpUser" Header="Informações do usuário" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="112" Width="466">
+                    <Grid Height="92" Margin="0,0,-2,-2" VerticalAlignment="Top">
+                        <Label x:Name="lbMatricula" Content="Matrícula:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                        <TextBox x:Name="txtMatricula" HorizontalAlignment="Left" Height="23" Margin="77,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="txtMatricula_TextChanged"/>
+                        <Label x:Name="lbSenha" Content="Senha:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="27,40,0,0"/>
+                        <PasswordBox x:Name="pwdSenha" HorizontalAlignment="Left" Height="23" Margin="77,44,0,0" VerticalAlignment="Top" Width="120"/>
+                        <TextBlock x:Name="txbSenhaClick" Text="...clique duas vezes para alterar o valor" VerticalAlignment="Top" Margin="202,44,0,0" Visibility="Hidden" Height="20" Foreground="#FF979797" FontStyle="Italic" TextDecorations="{x:Null}"/>
+                        <Rectangle x:Name="rectSenha" Opacity="0" Fill="Transparent" HorizontalAlignment="Left" Height="23" Width="120" Margin="77,44,0,0" VerticalAlignment="Top" MouseLeftButtonUp="rectSenha_MouseLeftButtonUp" MouseLeftButtonDown="rectSenha_MouseLeftButtonDown">
+                            <Rectangle.Style>
+                                <Style TargetType="Rectangle">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=pwdSenha, Path=IsEnabled}" Value="False">
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding ElementName=pwdSenha, Path=IsEnabled}" Value="True">
+                                            <Setter Property="Cursor" Value="IBeam"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Rectangle.Style>
+                        </Rectangle>
+                        <CheckBox x:Name="chkAdmin" Content="Administrador" HorizontalAlignment="Left" Margin="76,72,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </GroupBox>
+                <GroupBox x:Name="gpPerfil" Header="Informações do perfil" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" Height="132" Width="466">
+                    <Grid Margin="10,1,-2,-12">
+                        <Label x:Name="lbNome" Content="Nome:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,10,0,0"/>
+                        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="67,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+                        <Label x:Name="lbTelefone" Content="Telefone:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,40,0,0"/>
+                        <TextBox x:Name="txtTelefone" HorizontalAlignment="Left" Height="23" Margin="67,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+                        <Label x:Name="lbEmail" Content="E-Mail:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,70,0,0"/>
+                        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="67,74,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+            <Grid x:Name="gridDB">
+                <DataGrid Opacity="0" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden" IsEnabled="False" MaxHeight="0" x:Name="dgUsuarios" CanUserResizeColumns="False" CanUserResizeRows="False" IsReadOnly="True" AutoGenerateColumns="False" SelectedCellsChanged="dgUsuarios_SelectedCellsChanged" Margin="10" HorizontalAlignment="Center" SelectionUnit="FullRow" SelectionMode="Single" RowHeaderWidth="0">
+                    <DataGrid.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
                         </Style>
-                    </Rectangle.Style>
-                </Rectangle>
-                <CheckBox x:Name="chkAdmin" Content="Administrador" HorizontalAlignment="Left" Margin="76,72,0,0" VerticalAlignment="Top"/>
+                    </DataGrid.CellStyle>
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="Matrícula" Width="130">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Item1.MATRICULA}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Nome" Width="220">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Item2.NOME}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Telefone" Width="150">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Item3.NUMERO}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Email" Width="220">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Item4.ENDERECO}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
             </Grid>
-        </GroupBox>
-        <GroupBox x:Name="gpPerfil" Header="Informações do perfil" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" Height="132" Width="466">
-            <Grid Margin="10,1,-2,-12">
-                <Label x:Name="lbNome" Content="Nome:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,10,0,0"/>
-                <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="67,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
-                <Label x:Name="lbTelefone" Content="Telefone:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,40,0,0"/>
-                <TextBox x:Name="txtTelefone" HorizontalAlignment="Left" Height="23" Margin="67,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
-                <Label x:Name="lbEmail" Content="E-Mail:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,70,0,0"/>
-                <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="67,74,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
-            </Grid>
-        </GroupBox>
-        <Button x:Name="btnSelecionar" Content="Abrir DB" HorizontalAlignment="Left" Margin="401,272,0,0" VerticalAlignment="Top" Width="75" Click="btnSelecionar_Click" Background="White" BorderBrush="#FFAAAAAA"/>
-        <Button x:Name="btnInsAlt" Content="Inserir / Alterar" HorizontalAlignment="Left" Margin="304,272,0,0" VerticalAlignment="Top" Width="92" Click="btnInsAlt_Click" Background="White" BorderBrush="#FFAAAAAA"/>
-        <Button x:Name="btnRemover" Content="Remover" HorizontalAlignment="Left" Margin="224,272,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="btnRemover_Click" Background="White" BorderBrush="#FFAAAAAA"/>
-
+        </StackPanel>
+        <Grid Margin="0,0,0,10">
+            <Button x:Name="btnSelecionar" Content="Abrir DB" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" Width="75" Click="btnSelecionar_Click" Background="White" BorderBrush="#FFAAAAAA"/>
+            <Button x:Name="btnInsAlt" Content="Inserir / Alterar" HorizontalAlignment="Right" Margin="0,0,170,0" VerticalAlignment="Bottom" Width="92" Click="btnInsAlt_Click" Background="White" BorderBrush="#FFAAAAAA"/>
+            <Button x:Name="btnRemover" Content="Remover" HorizontalAlignment="Right" Margin="0,0,90,0" VerticalAlignment="Bottom" Width="75" IsEnabled="False" Click="btnRemover_Click" Background="White" BorderBrush="#FFAAAAAA"/>
+        </Grid>
     </Grid>
 </Window>
