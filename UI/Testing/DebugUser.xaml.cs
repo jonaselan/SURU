@@ -35,7 +35,7 @@ namespace UI.Testing
             if (listwindow.ShowDialog() == true)
             {
                 var composto = listwindow.dgUsuarios.SelectedItem as ItemComposto;
-                var usr = composto.Item1 as DTO.Usuario;
+               var usr = composto.Item1 as DTO.Usuario;
                 var p = composto.Item2 as DTO.Perfil;
 #if DEBUG
                 Console.WriteLine("USUÁRIO SELECIONADO:\n");
