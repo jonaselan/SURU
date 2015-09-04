@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\
 UI
 none
 false
-DEBUG;TRACE
-C:\Users\Jonas Elan\Desktop\SURU\UI\App.xaml
-2291603806
+TRACE;DEBUG;DEBUG, DEBUG_DB
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\App.xaml
+6-518374414
 
-10-1975836063
-12-1401562060
-Aluno\wAluno.xaml;MainWindow.xaml;
+15-421276524
+23-1179697436
+Admin\wAdm.xaml;Aluno\alterarSenha.xaml;Aluno\wAluno.xaml;MainWindow.xaml;Testing\DebugUser.xaml;Testing\DebugUserList.xaml;
 
 False
 

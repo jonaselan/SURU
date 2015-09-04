@@ -1,30 +1,166 @@
 C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\UI.exe.config
-C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\UI.exe
-C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\UI.pdb
 C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\Aluno\wAluno.baml
+C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\MainWindow.baml
+C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\Aluno\wAluno.g.cs
+C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\MainWindow.g.cs
+C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\Testing\DebugUser.g.cs
+C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\Testing\DebugUserList.g.cs
 C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\App.g.cs
 C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\UI_MarkupCompile.cache
+C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\UI_MarkupCompile.lref
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\UI.exe
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\UI.pdb
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\BLL.dll
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\DTO.dll
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\EntityFramework.dll
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\Octokit.dll
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\DAL.dll
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\linq2db.dll
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\BLL.pdb
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\DTO.pdb
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\EntityFramework.xml
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\Octokit.pdb
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\Octokit.xml
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\System.Data.SQLite.xml
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\DAL.pdb
+C:\Users\Jonas Elan\Desktop\SURU\UI\bin\Debug\linq2db.pdb
+C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\Testing\DebugUser.baml
+C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\Testing\DebugUserList.baml
 C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\UI.g.resources
 C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\UI.Properties.Resources.resources
 C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\UI.csproj.GenerateResource.Cache
 C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\UI.exe
 C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\UI.pdb
-C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\MainWindow.baml
-C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\MainWindow.g.cs
-C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\Aluno\wAluno.baml
-C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\Aluno\wAluno.g.cs
-C:\Users\Jonas Elan\Desktop\suru2\SURU\UI\bin\Debug\UI.exe.config
-C:\Users\Jonas Elan\Desktop\suru2\SURU\UI\obj\Debug\UI.exe
-C:\Users\Jonas Elan\Desktop\suru2\SURU\UI\obj\Debug\UI.pdb
-C:\Users\Jonas Elan\Desktop\suru2\SURU\UI\bin\Debug\UI.exe
-C:\Users\Jonas Elan\Desktop\suru2\SURU\UI\bin\Debug\UI.pdb
-C:\Users\Jonas Elan\Desktop\suru2\SURU\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
-C:\Users\Jonas Elan\Desktop\suru2\SURU\UI\obj\Debug\Aluno\wAluno.baml
-C:\Users\Jonas Elan\Desktop\suru2\SURU\UI\obj\Debug\MainWindow.baml
-C:\Users\Jonas Elan\Desktop\suru2\SURU\UI\obj\Debug\Aluno\wAluno.g.cs
-C:\Users\Jonas Elan\Desktop\suru2\SURU\UI\obj\Debug\MainWindow.g.cs
-C:\Users\Jonas Elan\Desktop\suru2\SURU\UI\obj\Debug\App.g.cs
-C:\Users\Jonas Elan\Desktop\suru2\SURU\UI\obj\Debug\UI_MarkupCompile.cache
-C:\Users\Jonas Elan\Desktop\suru2\SURU\UI\obj\Debug\UI.g.resources
-C:\Users\Jonas Elan\Desktop\suru2\SURU\UI\obj\Debug\UI.Properties.Resources.resources
-C:\Users\Jonas Elan\Desktop\suru2\SURU\UI\obj\Debug\UI.csproj.GenerateResource.Cache
+C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\Admin\wAdm.baml
+C:\Users\Jonas Elan\Desktop\SURU\UI\obj\Debug\Admin\wAdm.g.cs
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\UI.exe.config
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\obj\Debug\UI.exe
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\obj\Debug\UI.pdb
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\UI.exe
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\UI.pdb
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\BLL.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\DTO.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\EntityFramework.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\Octokit.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\DAL.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\linq2db.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\BLL.pdb
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\DTO.pdb
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\EntityFramework.xml
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\Octokit.pdb
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\Octokit.xml
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\System.Data.SQLite.xml
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\DAL.pdb
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\bin\Debug\linq2db.pdb
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\obj\Debug\Admin\wAdm.baml
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\obj\Debug\Aluno\wAluno.baml
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\obj\Debug\MainWindow.baml
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\obj\Debug\Admin\wAdm.g.cs
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\obj\Debug\Aluno\wAluno.g.cs
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\obj\Debug\MainWindow.g.cs
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\obj\Debug\Testing\DebugUser.g.cs
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\obj\Debug\Testing\DebugUserList.g.cs
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\obj\Debug\App.g.cs
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\obj\Debug\UI_MarkupCompile.cache
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\obj\Debug\UI_MarkupCompile.lref
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\obj\Debug\Testing\DebugUser.baml
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\obj\Debug\Testing\DebugUserList.baml
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\obj\Debug\UI.g.resources
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\obj\Debug\UI.Properties.Resources.resources
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\UI\obj\Debug\UI.csproj.GenerateResource.Cache
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\UI.exe.config
+C:\Users\Jonas Elan\Desktop\1.4\UI\obj\Debug\UI.exe
+C:\Users\Jonas Elan\Desktop\1.4\UI\obj\Debug\UI.pdb
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\UI.exe
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\UI.pdb
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\BLL.dll
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\DTO.dll
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\EntityFramework.dll
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\Octokit.dll
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\DAL.dll
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\linq2db.dll
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\BLL.pdb
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\DTO.pdb
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\EntityFramework.xml
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\Octokit.pdb
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\Octokit.xml
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\System.Data.SQLite.xml
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\DAL.pdb
+C:\Users\Jonas Elan\Desktop\1.4\UI\bin\Debug\linq2db.pdb
+C:\Users\Jonas Elan\Desktop\1.4\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\Jonas Elan\Desktop\1.4\UI\obj\Debug\Admin\wAdm.baml
+C:\Users\Jonas Elan\Desktop\1.4\UI\obj\Debug\Aluno\wAluno.baml
+C:\Users\Jonas Elan\Desktop\1.4\UI\obj\Debug\MainWindow.baml
+C:\Users\Jonas Elan\Desktop\1.4\UI\obj\Debug\Admin\wAdm.g.cs
+C:\Users\Jonas Elan\Desktop\1.4\UI\obj\Debug\Aluno\wAluno.g.cs
+C:\Users\Jonas Elan\Desktop\1.4\UI\obj\Debug\MainWindow.g.cs
+C:\Users\Jonas Elan\Desktop\1.4\UI\obj\Debug\Testing\DebugUser.g.cs
+C:\Users\Jonas Elan\Desktop\1.4\UI\obj\Debug\Testing\DebugUserList.g.cs
+C:\Users\Jonas Elan\Desktop\1.4\UI\obj\Debug\App.g.cs
+C:\Users\Jonas Elan\Desktop\1.4\UI\obj\Debug\UI_MarkupCompile.cache
+C:\Users\Jonas Elan\Desktop\1.4\UI\obj\Debug\UI_MarkupCompile.lref
+C:\Users\Jonas Elan\Desktop\1.4\UI\obj\Debug\Testing\DebugUser.baml
+C:\Users\Jonas Elan\Desktop\1.4\UI\obj\Debug\Testing\DebugUserList.baml
+C:\Users\Jonas Elan\Desktop\1.4\UI\obj\Debug\UI.g.resources
+C:\Users\Jonas Elan\Desktop\1.4\UI\obj\Debug\UI.Properties.Resources.resources
+C:\Users\Jonas Elan\Desktop\1.4\UI\obj\Debug\UI.csproj.GenerateResource.Cache
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\UI.exe.config
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\UI.exe
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\UI.pdb
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\UI.exe
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\UI.pdb
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\BLL.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\DTO.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\EntityFramework.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\Octokit.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\DAL.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\linq2db.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\BLL.pdb
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\DTO.pdb
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\EntityFramework.xml
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\Octokit.pdb
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\Octokit.xml
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\System.Data.SQLite.xml
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\DAL.pdb
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\bin\Debug\linq2db.pdb
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\Admin\wAdm.baml
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\Aluno\alterarSenha.baml
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\Aluno\wAluno.baml
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\MainWindow.baml
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\Admin\wAdm.g.cs
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\Aluno\alterarSenha.g.cs
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\Aluno\wAluno.g.cs
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\MainWindow.g.cs
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\Testing\DebugUser.g.cs
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\Testing\DebugUserList.g.cs
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\App.g.cs
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\UI_MarkupCompile.cache
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\UI_MarkupCompile.lref
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\Testing\DebugUser.baml
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\Testing\DebugUserList.baml
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\UI.g.resources
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\UI.Properties.Resources.resources
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\UI\obj\Debug\UI.csproj.GenerateResource.Cache

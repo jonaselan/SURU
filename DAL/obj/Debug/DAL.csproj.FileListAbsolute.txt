@@ -1,7 +1,84 @@
-\\psf\Home\Documents\TADS\Segundo Semestre\POO\Projeto Final\SURU\DAL\bin\Debug\DAL.exe.config
-C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\DAL.exe.config
-C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\DAL.exe
+C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\DAL.dll.config
+C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\DAL.dll
 C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\DAL.pdb
-C:\Users\Jonas Elan\Desktop\SURU\DAL\obj\Debug\DAL.exe
-C:\Users\Jonas Elan\Desktop\SURU\DAL\obj\Debug\DAL.pdb
+C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\DTO.dll
+C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\linq2db.dll
+C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\Octokit.dll
+C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\DTO.pdb
+C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\linq2db.pdb
+C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\Octokit.pdb
+C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\Octokit.xml
+C:\Users\Jonas Elan\Desktop\SURU\DAL\bin\Debug\System.Data.SQLite.xml
 C:\Users\Jonas Elan\Desktop\SURU\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Jonas Elan\Desktop\SURU\DAL\obj\Debug\DAL.dll
+C:\Users\Jonas Elan\Desktop\SURU\DAL\obj\Debug\DAL.pdb
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\bin\Debug\DAL.dll.config
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\bin\Debug\DAL.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\bin\Debug\DAL.pdb
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\bin\Debug\DTO.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\bin\Debug\linq2db.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\bin\Debug\Octokit.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\bin\Debug\DTO.pdb
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\bin\Debug\linq2db.pdb
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\bin\Debug\Octokit.pdb
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\bin\Debug\Octokit.xml
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\bin\Debug\System.Data.SQLite.xml
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\obj\Debug\DAL.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\DAL\obj\Debug\DAL.pdb
+C:\Users\Jonas Elan\Desktop\1.4\DAL\bin\Debug\DAL.dll.config
+C:\Users\Jonas Elan\Desktop\1.4\DAL\bin\Debug\DAL.dll
+C:\Users\Jonas Elan\Desktop\1.4\DAL\bin\Debug\DAL.pdb
+C:\Users\Jonas Elan\Desktop\1.4\DAL\bin\Debug\DTO.dll
+C:\Users\Jonas Elan\Desktop\1.4\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Jonas Elan\Desktop\1.4\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jonas Elan\Desktop\1.4\DAL\bin\Debug\linq2db.dll
+C:\Users\Jonas Elan\Desktop\1.4\DAL\bin\Debug\Octokit.dll
+C:\Users\Jonas Elan\Desktop\1.4\DAL\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jonas Elan\Desktop\1.4\DAL\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Jonas Elan\Desktop\1.4\DAL\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Jonas Elan\Desktop\1.4\DAL\bin\Debug\DTO.pdb
+C:\Users\Jonas Elan\Desktop\1.4\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Jonas Elan\Desktop\1.4\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jonas Elan\Desktop\1.4\DAL\bin\Debug\linq2db.pdb
+C:\Users\Jonas Elan\Desktop\1.4\DAL\bin\Debug\Octokit.pdb
+C:\Users\Jonas Elan\Desktop\1.4\DAL\bin\Debug\Octokit.xml
+C:\Users\Jonas Elan\Desktop\1.4\DAL\bin\Debug\System.Data.SQLite.xml
+C:\Users\Jonas Elan\Desktop\1.4\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Jonas Elan\Desktop\1.4\DAL\obj\Debug\DAL.dll
+C:\Users\Jonas Elan\Desktop\1.4\DAL\obj\Debug\DAL.pdb
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\bin\Debug\DAL.dll.config
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\bin\Debug\DAL.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\bin\Debug\DAL.pdb
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\bin\Debug\DTO.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\bin\Debug\linq2db.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\bin\Debug\Octokit.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\bin\Debug\DTO.pdb
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\bin\Debug\linq2db.pdb
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\bin\Debug\Octokit.pdb
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\bin\Debug\Octokit.xml
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\bin\Debug\System.Data.SQLite.xml
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\obj\Debug\DAL.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DAL\obj\Debug\DAL.pdb

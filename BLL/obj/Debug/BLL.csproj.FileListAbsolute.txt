@@ -1,6 +1,92 @@
-C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\BLL.exe.config
-C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\BLL.exe
-C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\BLL.pdb
-C:\Users\Jonas Elan\Desktop\SURU\BLL\obj\Debug\BLL.exe
-C:\Users\Jonas Elan\Desktop\SURU\BLL\obj\Debug\BLL.pdb
 C:\Users\Jonas Elan\Desktop\SURU\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\BLL.dll.config
+C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\BLL.dll
+C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\BLL.pdb
+C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\DAL.dll
+C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\DTO.dll
+C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\EntityFramework.dll
+C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\linq2db.dll
+C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\Octokit.dll
+C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\DAL.pdb
+C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\DTO.pdb
+C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\EntityFramework.xml
+C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\linq2db.pdb
+C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\Octokit.pdb
+C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\Octokit.xml
+C:\Users\Jonas Elan\Desktop\SURU\BLL\bin\Debug\System.Data.SQLite.xml
+C:\Users\Jonas Elan\Desktop\SURU\BLL\obj\Debug\BLL.dll
+C:\Users\Jonas Elan\Desktop\SURU\BLL\obj\Debug\BLL.pdb
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\bin\Debug\BLL.dll.config
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\bin\Debug\BLL.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\bin\Debug\BLL.pdb
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\bin\Debug\DAL.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\bin\Debug\DTO.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\bin\Debug\EntityFramework.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\bin\Debug\linq2db.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\bin\Debug\Octokit.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\bin\Debug\DAL.pdb
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\bin\Debug\DTO.pdb
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\bin\Debug\EntityFramework.xml
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\bin\Debug\linq2db.pdb
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\bin\Debug\Octokit.pdb
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\bin\Debug\Octokit.xml
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\bin\Debug\System.Data.SQLite.xml
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\obj\Debug\BLL.dll
+C:\Users\Jonas Elan\Desktop\SURU - Copia - Copia\BLL\obj\Debug\BLL.pdb
+C:\Users\Jonas Elan\Desktop\1.4\BLL\bin\Debug\BLL.dll.config
+C:\Users\Jonas Elan\Desktop\1.4\BLL\bin\Debug\BLL.dll
+C:\Users\Jonas Elan\Desktop\1.4\BLL\bin\Debug\BLL.pdb
+C:\Users\Jonas Elan\Desktop\1.4\BLL\bin\Debug\DAL.dll
+C:\Users\Jonas Elan\Desktop\1.4\BLL\bin\Debug\DTO.dll
+C:\Users\Jonas Elan\Desktop\1.4\BLL\bin\Debug\EntityFramework.dll
+C:\Users\Jonas Elan\Desktop\1.4\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jonas Elan\Desktop\1.4\BLL\bin\Debug\linq2db.dll
+C:\Users\Jonas Elan\Desktop\1.4\BLL\bin\Debug\Octokit.dll
+C:\Users\Jonas Elan\Desktop\1.4\BLL\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jonas Elan\Desktop\1.4\BLL\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Jonas Elan\Desktop\1.4\BLL\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Jonas Elan\Desktop\1.4\BLL\bin\Debug\DAL.pdb
+C:\Users\Jonas Elan\Desktop\1.4\BLL\bin\Debug\DTO.pdb
+C:\Users\Jonas Elan\Desktop\1.4\BLL\bin\Debug\EntityFramework.xml
+C:\Users\Jonas Elan\Desktop\1.4\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jonas Elan\Desktop\1.4\BLL\bin\Debug\linq2db.pdb
+C:\Users\Jonas Elan\Desktop\1.4\BLL\bin\Debug\Octokit.pdb
+C:\Users\Jonas Elan\Desktop\1.4\BLL\bin\Debug\Octokit.xml
+C:\Users\Jonas Elan\Desktop\1.4\BLL\bin\Debug\System.Data.SQLite.xml
+C:\Users\Jonas Elan\Desktop\1.4\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Jonas Elan\Desktop\1.4\BLL\obj\Debug\BLL.dll
+C:\Users\Jonas Elan\Desktop\1.4\BLL\obj\Debug\BLL.pdb
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\bin\Debug\BLL.dll.config
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\bin\Debug\BLL.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\bin\Debug\BLL.pdb
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\bin\Debug\DAL.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\bin\Debug\DTO.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\bin\Debug\EntityFramework.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\bin\Debug\linq2db.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\bin\Debug\Octokit.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\bin\Debug\DAL.pdb
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\bin\Debug\DTO.pdb
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\bin\Debug\EntityFramework.xml
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\bin\Debug\linq2db.pdb
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\bin\Debug\Octokit.pdb
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\bin\Debug\Octokit.xml
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\bin\Debug\System.Data.SQLite.xml
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\obj\Debug\BLL.dll
+C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\BLL\obj\Debug\BLL.pdb

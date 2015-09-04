@@ -2,14 +2,31 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="UI.MainWindow"
-        Title="SURU" Height="374" Width="633" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
-    <Window.Background>
-        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-            <GradientStop Color="#FFECEBE5" Offset="0.036"/>
-            <GradientStop Color="#FFE4DF67" Offset="0.843"/>
-        </LinearGradientBrush>
-    </Window.Background>
+        Title="SURU" Height="460" Width="500" ResizeMode="CanResize" MinHeight="460" MinWidth="500" WindowStartupLocation="CenterScreen" Background="#FFE4E4E4" Name="LoginWindow" Loaded="LoginWindow_Loaded" Icon="SIcone.ico">
     <Grid>
-        <Button Content="Entrar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="272,141,0,0" Click="Button_Click"/>
+        <Button x:Name="btnEntrar" Content="Entrar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="25" Margin="150,120,0,0" Click="btnEntrar_Click" Background="White" Foreground="#FF919191" BorderBrush="#FFAAAAAA" IsDefault="True"/>
+        <Button x:Name="btnLimpar" Content="Limpar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="25" Margin="30,120,0,0" Click="btnLimpar_Click" Background="White" Foreground="#FF919191" BorderBrush="#FFAAAAAA"/>
+        <TextBox x:Name="txtMatricula" HorizontalAlignment="Center" Height="23" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="200" GotFocus="txtMatricula_GotFocus" LostFocus="txtMatricula_LostFocus"/>
+        <PasswordBox x:Name="pwdSenha" HorizontalAlignment="Center" Height="23" Margin="0,60,0,0" VerticalAlignment="Center" Width="200" GotFocus="pwdSenha_GotFocus" LostFocus="pwdSenha_LostFocus"/>
+        <Label x:Name="lbMatricula" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Matrícula" Foreground="#FFAEAEAE" Margin="-140,0,0,0" Cursor="IBeam" MouseLeftButtonUp="lbInput_MouseLeftButtonUp" Target="{x:Reference txtMatricula}"/>
+        <Label x:Name="lbSenha" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Senha" Foreground="#FFAEAEAE" Margin="-158,60,0,0" Cursor="IBeam" MouseLeftButtonUp="lbInput_MouseLeftButtonUp" Target="{x:Reference pwdSenha}"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,-70,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Center" FontWeight="Bold" FontSize="18.667" Foreground="White">
+            <TextBlock.Effect>
+                <DropShadowEffect ShadowDepth="1" Opacity="0.5"/>
+            </TextBlock.Effect>
+        </TextBlock>
+        
+        <TextBlock x:Name="txbVersion" HorizontalAlignment="Right" Margin="0,0,10,5" TextWrapping="Wrap" Text="{Binding ProgramVersion, ElementName=LoginWindow}" VerticalAlignment="Bottom" Foreground="#FF9E9E9E"/>
+        <TextBlock x:Name="txbGit" HorizontalAlignment="Left" Margin="10,0,0,5" TextWrapping="Wrap" Text="Verificando se há atualizações..." VerticalAlignment="Bottom" Foreground="#FF9E9E9E"/>
+        <!-- LOGO POR TEXTO 
+        <Canvas HorizontalAlignment="Center" Height="50" Margin="-67,-200,0,0" VerticalAlignment="Center" Width="65" Background="#FF595959"/>
+        <StackPanel HorizontalAlignment="Center" Height="60" Margin="0,-200,0,0" VerticalAlignment="Center" Width="128" Orientation="Horizontal">
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="S" VerticalAlignment="Center" FontSize="48" FontWeight="Bold" Foreground="White"/>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="U" VerticalAlignment="Center" FontSize="48" FontWeight="Bold" Foreground="#FFE60000"/>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="RU" VerticalAlignment="Center" FontSize="48" FontWeight="Bold" Foreground="#FF559EDA"/>
+        </StackPanel>
+        -->
+        <!-- LOGO POR ÍCONE -->
+        <Image x:Name="image" HorizontalAlignment="Center" Height="120" Margin="0,0,0,250" VerticalAlignment="Center" Width="120" Source="SIcone_NoShadow.ico"/>
     </Grid>
 </Window>
