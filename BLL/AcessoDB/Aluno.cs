@@ -20,6 +20,7 @@ namespace BLL
 
             // CONECTANDO AO DB
             DAL.Database db = new DAL.Database();
+            // modificar usuário
             db.Update(e);
         }
 

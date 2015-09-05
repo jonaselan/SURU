@@ -14,10 +14,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using UI.Aluno;
-using UI.Admin;
-#if DEBUG_DB
+using UI.Adm;
+/*#if DEBUG_DB
 using UI.Testing;
-#endif
+#endif*/
 using BLL;
 using BLL.AcessoDB;
 
@@ -37,10 +37,10 @@ namespace UI
             Database.Acess();
             InitializeComponent();
             //DESCOMENTE A LINHA ABAIXO PARA ABRIR DB_DEBUG
-           #if DEBUG_DB
+          /* #if DEBUG_DB
                        DebugUser janelaDBDebug = new DebugUser();
                        janelaDBDebug.Show();
-           #endif
+           #endif*/
         }
 
         private async void btnEntrar_Click(object sender, RoutedEventArgs e)
@@ -60,7 +60,7 @@ namespace UI
 
             if (session.User.ISADM)
             {
-                wAdm telaAdm = new wAdm();
+                wAdministrador telaAdm = new wAdministrador(session);
                 this.Close();
                 telaAdm.ShowDialog();
             }

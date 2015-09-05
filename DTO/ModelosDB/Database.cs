@@ -12,6 +12,7 @@ namespace DTO
         public ITable<Telefone> TB_TELEFONES { get { return this.GetTable<Telefone>(); } }
         public ITable<Usuario> TB_USUARIOS { get { return this.GetTable<Usuario>(); } }
         public ITable<Prato> TB_PRATOS { get { return this.GetTable<Prato>(); } }
+        public ITable<Fila> TB_FILAS { get { return this.GetTable<Fila>(); } }
 
         public Database()
         {
@@ -63,5 +64,11 @@ namespace DTO
             return table.FirstOrDefault(t =>
                 t.ID_PRATO == ID_PRATO);
         }
+        public static Fila Find(this ITable<Fila> table, int ID_FILA)
+        {
+            return table.FirstOrDefault(t =>
+                t.ID_FILA == ID_FILA);
+        }
+
     }
 }

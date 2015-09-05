@@ -154,6 +154,7 @@ namespace BLL
             catch (Exception ex) { throw ex; }
 
             // CONECTANDO AO DB
+            // modificar usuário
             DAL.Database db = new DAL.Database();
             db.Update(u);
         }

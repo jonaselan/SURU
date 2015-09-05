@@ -119,8 +119,8 @@ namespace UI.Testing
             {
                 try
                 {
-                    MessageBoxResult confirmationBox = MessageBox.Show("Sure", "Some Title", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation);
-                    if (DialogResult == true)
+                    MessageBoxResult confirmationBox = MessageBox.Show("Tem certeza?", "Alterando Usuário", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+                    if (confirmationBox == MessageBoxResult.Yes)
                     {
                         usr.ID_PERFIL = usr_match.ID_PERFIL;
                         if (usr.ISADM)
@@ -131,6 +131,8 @@ namespace UI.Testing
                         else 
                         {
                             // modificar usuário
+                            // a DTO.Aluno
+                            // db_usr BLL.Usuario
                             a.ID = usr.ID_PERFIL;
                             db_usr.Alterar(usr, a, pwdSenha.IsEnabled);
                         }

@@ -74,3 +74,41 @@ C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DTO\bin\Debug\System.Data.SQLi
 C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
 C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DTO\obj\Debug\DTO.dll
 C:\Users\Jonas Elan\Desktop\1.5 - modificar senha\DTO\obj\Debug\DTO.pdb
+C:\Users\Jonas Elan\Desktop\SURU junção\DTO\bin\Debug\DTO.dll.config
+C:\Users\Jonas Elan\Desktop\SURU junção\DTO\bin\Debug\DTO.dll
+C:\Users\Jonas Elan\Desktop\SURU junção\DTO\bin\Debug\DTO.pdb
+C:\Users\Jonas Elan\Desktop\SURU junção\DTO\bin\Debug\EntityFramework.dll
+C:\Users\Jonas Elan\Desktop\SURU junção\DTO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jonas Elan\Desktop\SURU junção\DTO\bin\Debug\linq2db.dll
+C:\Users\Jonas Elan\Desktop\SURU junção\DTO\bin\Debug\Octokit.dll
+C:\Users\Jonas Elan\Desktop\SURU junção\DTO\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jonas Elan\Desktop\SURU junção\DTO\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Jonas Elan\Desktop\SURU junção\DTO\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Jonas Elan\Desktop\SURU junção\DTO\bin\Debug\EntityFramework.xml
+C:\Users\Jonas Elan\Desktop\SURU junção\DTO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jonas Elan\Desktop\SURU junção\DTO\bin\Debug\linq2db.pdb
+C:\Users\Jonas Elan\Desktop\SURU junção\DTO\bin\Debug\Octokit.pdb
+C:\Users\Jonas Elan\Desktop\SURU junção\DTO\bin\Debug\Octokit.xml
+C:\Users\Jonas Elan\Desktop\SURU junção\DTO\bin\Debug\System.Data.SQLite.xml
+C:\Users\Jonas Elan\Desktop\SURU junção\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\Jonas Elan\Desktop\SURU junção\DTO\obj\Debug\DTO.dll
+C:\Users\Jonas Elan\Desktop\SURU junção\DTO\obj\Debug\DTO.pdb
+C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\DTO\bin\Debug\DTO.dll.config
+C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\DTO\bin\Debug\DTO.dll
+C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\DTO\bin\Debug\DTO.pdb
+C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\DTO\bin\Debug\EntityFramework.dll
+C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\DTO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\DTO\bin\Debug\linq2db.dll
+C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\DTO\bin\Debug\Octokit.dll
+C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\DTO\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\DTO\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\DTO\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\DTO\bin\Debug\EntityFramework.xml
+C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\DTO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\DTO\bin\Debug\linq2db.pdb
+C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\DTO\bin\Debug\Octokit.pdb
+C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\DTO\bin\Debug\Octokit.xml
+C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\DTO\bin\Debug\System.Data.SQLite.xml
+C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\DTO\obj\Debug\DTO.dll
+C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\DTO\obj\Debug\DTO.pdb

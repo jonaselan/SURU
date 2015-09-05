@@ -86,8 +86,10 @@
     <Compile Include="AcessoDB\Administrador.cs" />
     <Compile Include="AcessoDB\Aluno.cs" />
     <Compile Include="AcessoDB\Database.cs" />
+    <Compile Include="AcessoDB\Fila.cs" />
     <Compile Include="AcessoDB\Interfaces\IAdministrador.cs" />
     <Compile Include="AcessoDB\Interfaces\IAluno.cs" />
+    <Compile Include="AcessoDB\Interfaces\IFila.cs" />
     <Compile Include="AcessoDB\Interfaces\IPrato.cs" />
     <Compile Include="AcessoDB\Prato.cs" />
     <Compile Include="ConsoleManager.cs" />

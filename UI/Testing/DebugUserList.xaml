@@ -20,7 +20,7 @@
                 </DataGrid.CellStyle>
                 
                 <DataGrid.Columns>
-                    <DataGridTemplateColumn Header="Matrícula" Width="130">
+                    <DataGridTemplateColumn Header="Matrícula" Width="120">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Item1.MATRICULA}"/>
@@ -34,17 +34,31 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="Telefone" Width="150">
+                    <DataGridTemplateColumn Header="Tipo" Width="90">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Item3.NUMERO}"/>
+                                <TextBlock Text="{Binding Item3.TIPO}"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="Email" Width="220">
+                    <DataGridTemplateColumn Header="Periodo" Width="90">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Item4.ENDERECO}"/>
+                                <TextBlock Text="{Binding Item4.PERIODO}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Turno" Width="90">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Item5.TURNO}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Curso" Width="100">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Item6.CURSO}"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

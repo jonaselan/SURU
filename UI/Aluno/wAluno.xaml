@@ -9,6 +9,8 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
+        <Button x:Name="Sair" Content="Sair" HorizontalAlignment="Left" VerticalAlignment="Top" Width="51" Margin="826,22,0,0" Click="Sair_Click"/>
+        <Button x:Name="btnAlterar" Content="Alterar Senha" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Margin="717,22,0,0" Click="btnAlterar_Click" />
         <Image HorizontalAlignment="Left" Height="104" VerticalAlignment="Top" Width="94" Margin="23,69,0,0" Source="../img/user.png" />
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="23,47,0,0" Stroke="Black" VerticalAlignment="Top" Width="854"/>
         <Label Content="Dados do Aluno" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" BorderThickness="0" FontSize="22"/>
@@ -161,7 +163,6 @@
                 <ListBoxItem Content="Graviola "/>
             </ComboBox>
         </Grid>
-        <Button x:Name="Sair" Content="Sair" HorizontalAlignment="Left" VerticalAlignment="Top" Width="51" Margin="826,22,0,0" Click="Sair_Click"/>
-        <Button x:Name="btnAlterar" Content="Alterar Senha" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Margin="717,22,0,0" Click="btnAlterar_Click" />
+        
     </Grid>
 </Window>

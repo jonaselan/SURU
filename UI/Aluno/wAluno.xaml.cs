@@ -43,6 +43,12 @@ namespace UI.Aluno
             return a;
         }
 
+        private void btnAlterar_Click(object sender, RoutedEventArgs e)
+        {
+            alterarSenha alt = new alterarSenha();
+            alt.ShowDialog();
+        }
+
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {            
             aluno = await GetAluno(s);
@@ -738,11 +744,7 @@ namespace UI.Aluno
             login.ShowDialog();
         }
 
-        private void btnAlterar_Click(object sender, RoutedEventArgs e)
-        {
-            alterarSenha alt = new alterarSenha();
-            alt.ShowDialog();
-        }
+        
         
     }
 }
