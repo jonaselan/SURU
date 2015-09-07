@@ -159,3 +159,26 @@ C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\BLL\bin\Debug\System
 C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\BLL\obj\Debug\BLL.dll
 C:\Users\Jonas Elan\Desktop\SURU junção CRIAÇÃO DA FILA\BLL\obj\Debug\BLL.pdb
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\bin\Debug\BLL.dll.config
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\bin\Debug\BLL.dll
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\bin\Debug\BLL.pdb
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\bin\Debug\DAL.dll
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\bin\Debug\DTO.dll
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\bin\Debug\EntityFramework.dll
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\bin\Debug\linq2db.dll
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\bin\Debug\Octokit.dll
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\bin\Debug\DAL.pdb
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\bin\Debug\DTO.pdb
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\bin\Debug\EntityFramework.xml
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\bin\Debug\linq2db.pdb
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\bin\Debug\Octokit.pdb
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\bin\Debug\Octokit.xml
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\bin\Debug\System.Data.SQLite.xml
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\obj\Debug\BLL.dll
+C:\Users\Jonas Elan\Desktop\SURU junção FILA CRIADA\BLL\obj\Debug\BLL.pdb

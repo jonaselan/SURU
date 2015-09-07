@@ -16,6 +16,9 @@ using System.Windows.Shapes;
 using BLL;
 using System.ComponentModel;
 using System.Windows.Threading;
+using UI.Adm;
+using UI.Aluno;
+
 
 namespace UI.Adm
 {
@@ -335,15 +338,22 @@ namespace UI.Adm
             cbAlunos.ItemsSource = list;
         }
 
-        private void btnInsFila_Click(object sender, RoutedEventArgs e) {  
+        private async void btnInsFila_Click(object sender, RoutedEventArgs e) {  
             Random rdn = new Random();
+            
             DTO.Fila f = new DTO.Fila();
-            qtd++;
+            BLL.Fila fBLL = new BLL.Fila();
+
+            List<DTO.Fila> list = await fBLL.Listar();
+            qtd = list.Count;
+            
             if (qtd <= 10)
             {
                 // se ainda haver espaço na fila
-                f.ID_FILA = rdn.Next(1000, 2000);
-                f.MATRICULA = 0; // POR ENQUANTO
+                f.ID_FILA = 0; // MODIFICAAAAAR
+                
+                DTO.Usuario usr = (DTO.Usuario)cbAlunos.SelectedItem;
+                f.MATRICULA = long.Parse(usr.MATRICULA);
                 f.QTD = qtd;
 
                 DateTime a = DateTime.Today;
@@ -373,6 +383,12 @@ namespace UI.Adm
         private void dgFila_Loaded(object sender, RoutedEventArgs e)
         {
             AtualizarGrid();
+        }
+
+        private void btnAlterar_Click(object sender, RoutedEventArgs e)
+        {
+            alterarSenha alt = new alterarSenha(s);
+            alt.ShowDialog();
         }
 
     }

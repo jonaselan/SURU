@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UI.Aluno;
 
 namespace UI.Aluno
 {
@@ -45,7 +46,7 @@ namespace UI.Aluno
 
         private void btnAlterar_Click(object sender, RoutedEventArgs e)
         {
-            alterarSenha alt = new alterarSenha();
+            alterarSenha alt = new alterarSenha(s);
             alt.ShowDialog();
         }
 

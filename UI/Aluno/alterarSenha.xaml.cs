@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,8 +20,10 @@ namespace UI.Aluno
     /// </summary>
     public partial class alterarSenha : Window
     {
-        public alterarSenha()
+        private Session s;
+        public alterarSenha(Session s)
         {
+            this.s = s;
             InitializeComponent();
         }
         
@@ -33,6 +36,11 @@ namespace UI.Aluno
             else
             {
                 // modificar senha
+                BLL.Usuario usrBLL = new BLL.Usuario();
+                DTO.Usuario usrDTO = s.User;
+
+                s.User.SENHA = txtDigitarNov.Password;
+                usrBLL.Alterar(s.User, true);
 
             }
         }

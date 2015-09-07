@@ -38,6 +38,11 @@ namespace UI.Adm
 
             foreach (Usuario u in await usuariobll.Listar())
             {
+
+                if (u.ISADM){
+                    continue;
+                }
+
                 itemcomposto = new ItemComposto();
                 itemcomposto.Item1 = u;
                 itemcomposto.Item2 = await usuariobll.GetPerfil(u);
@@ -52,8 +57,8 @@ namespace UI.Adm
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            BLL.Usuario bll = new BLL.Usuario();
             dgUsuarios.ItemsSource = await GetDB();
+
         }
 
         private void dgUsuarios_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
