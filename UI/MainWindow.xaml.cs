@@ -1,5 +1,4 @@
-﻿/* DESCOMENTE A LINHA ABAIXO PARA ABRIR JANELA DE DB */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,9 +14,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using UI.Aluno;
 using UI.Adm;
-/*#if DEBUG_DB
-using UI.Testing;
-#endif*/
 using BLL;
 using BLL.AcessoDB;
 
@@ -36,11 +32,6 @@ namespace UI
             AppDomain.CurrentDomain.SetData("DataDirectory", path);
             Database.Acess();
             InitializeComponent();
-            //DESCOMENTE A LINHA ABAIXO PARA ABRIR DB_DEBUG
-          /* #if DEBUG_DB
-                       DebugUser janelaDBDebug = new DebugUser();
-                       janelaDBDebug.Show();
-           #endif*/
         }
 
         private async void btnEntrar_Click(object sender, RoutedEventArgs e)
@@ -62,12 +53,12 @@ namespace UI
             {
                 wAdministrador telaAdm = new wAdministrador(session);
                 this.Close();
-                telaAdm.ShowDialog();
+                telaAdm.Show();
             }
             else { 
                 wAluno telaAluno = new wAluno(session);
                 this.Close();
-                telaAluno.ShowDialog();
+                telaAluno.Show();
             }
 
         }

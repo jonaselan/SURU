@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 
 using LinqToDB;
+using System;
 
 namespace DTO
 {
@@ -64,10 +65,10 @@ namespace DTO
             return table.FirstOrDefault(t =>
                 t.ID_PRATO == ID_PRATO);
         }
-        public static Fila Find(this ITable<Fila> table, int ID_FILA)
+        public static Fila Find(this ITable<Fila> table, DateTime DATA)
         {
             return table.FirstOrDefault(t =>
-                t.ID_FILA == ID_FILA);
+                t.DATA == DATA);
         }
 
     }

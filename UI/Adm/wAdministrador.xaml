@@ -21,8 +21,8 @@
             <TextBlock x:Name="txMatricula" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="14,36,0,0"/>
             <TextBlock x:Name="txNome" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="15,89,0,0"/>
         </Grid>
-        <Image Name="btnFila" MouseLeftButtonUp="btnFila_MouseLeftButtonUp" HorizontalAlignment="Left" Height="103" VerticalAlignment="Top" Width="98" Margin="368,91,0,0" Source="../img/icon-fila.jpg"/>
-        <Image Name="btnAluno" MouseLeftButtonUp="btnAluno_MouseLeftButtonUp" HorizontalAlignment="Left" Height="103" VerticalAlignment="Top" Width="98" Margin="474,91,0,0" Source="../img/icon-alunos.jpg"/>
+        <Image Name="btnFila" MouseLeftButtonUp="btnFila_MouseLeftButtonUp" HorizontalAlignment="Left" Height="103" VerticalAlignment="Top" Width="98" Margin="368,91,0,0" Source="../img/icon-fila.jpg" Cursor="Hand"/>
+        <Image Name="btnAluno" MouseLeftButtonUp="btnAluno_MouseLeftButtonUp" HorizontalAlignment="Left" Height="103" VerticalAlignment="Top" Width="98" Margin="474,91,0,0" Source="../img/icon-alunos.jpg" Cursor="Hand"/>
 
         <Grid x:Name="grdFila" Opacity="1" Background="White" Height="340" Margin="0, 250, 0 ,0">
             <Grid.RowDefinitions>
@@ -46,20 +46,57 @@
                     <Button x:Name="btnInsFila" Height="23" Width="100" Content="Adicionar" Margin="17,10,51,10" Click="btnInsFila_Click"/>
                 </StackPanel>
             </GroupBox>
+
             <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2">
-                <DataGrid x:Name="dgFila" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,8,0,0" Height="304" Width="351" Loaded="dgFila_Loaded">
+                <DataGrid x:Name="dgFila" HorizontalAlignment="Left" HorizontalScrollBarVisibility="Hidden"  VerticalAlignment="Top" Margin="21,8,0,0" Height="304" Width="351" Loaded="dgFila_Loaded" AutoGenerateColumns="False" RowHeaderWidth="0" CanUserAddRows="False">
+                    <DataGrid.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Path=Name}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                            <GroupStyle.ContainerStyle>
+                                <Style TargetType="{x:Type GroupItem}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type GroupItem}">
+                                                <Expander>
+                                                    <Expander.Header>
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding Path=Name}" />
+                                                        </StackPanel>
+                                                    </Expander.Header>
+                                                    <ItemsPresenter />
+                                                </Expander>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </GroupStyle.ContainerStyle>
+                        </GroupStyle>
+                    </DataGrid.GroupStyle>
                     <DataGrid.Columns>
-                        <DataGridTemplateColumn Header="Data" Width="130">
+                        <DataGridTemplateColumn Header="Data" IsReadOnly="True" Width="205">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding DATA}"/>
+                                    <TextBlock Text="{Binding DATA, StringFormat=D, ConverterCulture=pt-br}"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-
+                        <DataGridTemplateColumn Header="Matricula" IsReadOnly="True" Width="145">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding MATRICULA}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                     </DataGrid.Columns>
                 </DataGrid>    
             </Border>
+
 
         </Grid>
 

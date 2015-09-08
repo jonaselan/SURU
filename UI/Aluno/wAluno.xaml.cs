@@ -742,7 +742,7 @@ namespace UI.Aluno
         {
             MainWindow login = new MainWindow();
             this.Close();
-            login.ShowDialog();
+            login.Show();
         }
 
         

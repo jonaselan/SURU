@@ -23,13 +23,13 @@ namespace BLL
             db.Update(e);
         }
 
-        public async Task<DTO.Fila> ConsultarPorId(long id)
+        public async Task<DTO.Fila> ConsultarPorData(DateTime data)
         {
             DTO.Fila eml = null;
             using (var db = new DTO.Database())
             {
                 var q = from e in db.TB_FILAS
-                        where e.ID_FILA == id
+                        where e.DATA == data
                         select e;
                 eml = await q.FirstOrDefaultAsync();
             }
@@ -67,19 +67,5 @@ namespace BLL
             DAL.Database db = new DAL.Database();
             db.Delete(e);
         }
-
-        /*public async Task<List<DTO.Fila>> FilasPerfilId(long id)
-        {
-            List<DTO.Fila> eml = null;
-            using (var db = new DTO.Database())
-            {
-                var q = from e in db.TB_FilaS
-                        where e.ID == id
-                        select e;
-                var list = await q.ToListAsync();
-                eml = list;
-            }
-            return eml;
-        }*/
     }
 }

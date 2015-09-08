@@ -55,7 +55,6 @@ namespace UI.Adm
             this.s = s;
 
             cbTipo.SelectedIndex = 0;
-
             //animationOpacidadeUp.Completed += new EventHandler(animation_OpacidadeUp);
             //BeginAnimation(OpacityProperty, animationOpacidadeUp);
         }
@@ -326,8 +325,9 @@ namespace UI.Adm
         private void btnSair_Click(object sender, RoutedEventArgs e)
         {
             MainWindow login = new MainWindow();
+            s = null;
             this.Close();
-            login.ShowDialog();
+            login.Show();
         }
 
         private async void cbAlunos_Loaded(object sender, RoutedEventArgs e)
@@ -339,25 +339,21 @@ namespace UI.Adm
         }
 
         private async void btnInsFila_Click(object sender, RoutedEventArgs e) {  
-            Random rdn = new Random();
             
             DTO.Fila f = new DTO.Fila();
             BLL.Fila fBLL = new BLL.Fila();
 
             List<DTO.Fila> list = await fBLL.Listar();
-            qtd = list.Count;
-            
+            qtd = list.Where(e_f => e_f.DATA.Date == DateTime.Now.Date).Count();
+
+            Console.WriteLine(qtd);
+
             if (qtd <= 10)
             {
-                // se ainda haver espaço na fila
-                f.ID_FILA = 0; // MODIFICAAAAAR
-                
+                f.DATA = DateTime.Now;
+          
                 DTO.Usuario usr = (DTO.Usuario)cbAlunos.SelectedItem;
                 f.MATRICULA = long.Parse(usr.MATRICULA);
-                f.QTD = qtd;
-
-                DateTime a = DateTime.Today;
-                f.DATA = a.ToString("dd/MM/yyyy");
 
                 // adicionar novo prato
                 BLL.Fila db_fila = new BLL.Fila();
@@ -376,8 +372,10 @@ namespace UI.Adm
         private async void AtualizarGrid()
         {
             BLL.Fila fBLL = new BLL.Fila();
-            dgFila.ItemsSource = await fBLL.Listar();
-
+            List<DTO.Fila> list = await fBLL.Listar();
+            ListCollectionView grupoFila = new ListCollectionView(list);
+            grupoFila.GroupDescriptions.Add(new PropertyGroupDescription("DATA", new BLL.Conversores.DateTimeConverter()));
+            dgFila.ItemsSource = grupoFila;
         }
 
         private void dgFila_Loaded(object sender, RoutedEventArgs e)
@@ -390,6 +388,8 @@ namespace UI.Adm
             alterarSenha alt = new alterarSenha(s);
             alt.ShowDialog();
         }
+
+        
 
     }
 }
