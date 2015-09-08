@@ -135,6 +135,24 @@ namespace BLL
             db.Update(u);
         }
 
+        public void Alterar(DTO.Usuario u, bool hashSenha = true)
+        {
+            // RETIRANDO OS ESPAÇOS
+            DBElementHandling.RemoverEspacos(u);
+
+            // CHECAGEM DOS VALORES INSERIDOS
+            try { IsValido(u); }
+            catch (Exception ex) { throw ex; }
+
+            // HASH DA SENHA
+            if (hashSenha)
+                u.SENHA = DBElementHandling.Hash(u.SENHA);
+
+            // CONECTANDO AO DB
+            DAL.Database db = new DAL.Database();
+            db.Update(u);
+        }
+
         public void Alterar(DTO.Usuario u, DTO.Aluno p, bool hashSenha = true)
         {
             // RETIRANDO OS ESPAÇOS
@@ -187,7 +205,7 @@ namespace BLL
 
             if (u == null) { throw new Exception("Usuário não encontrado"); }
 
-            // TENTAR ALTERAR O PERFIL
+            // TENTAR REMOVER O PERFIL
             if (u.ISADM)
             {
                 Administrador abll = new Administrador();

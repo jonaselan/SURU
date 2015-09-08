@@ -17,7 +17,6 @@ namespace BLL
             // CHECAGEM DOS VALORES INSERIDOS
             try { IsValido(e); } catch (Exception ex) { throw ex; }
 
-
             // CONECTANDO AO DB
             DAL.Database db = new DAL.Database();
             // modificar usuário
