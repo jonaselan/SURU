@@ -9,17 +9,17 @@ namespace DTO
     public class Session
     {
         Usuario user;
-        Aluno aluno;
+        Perfil perfil;
 
         public Usuario User {
             get { return this.user; }
             set { this.user = value; }
         }
 
-        public Aluno Aluno
+        public Perfil Perfil
         {
-            get { return this.aluno; }
-            set { this.aluno = value; }
+            get { return this.perfil; }
+            set { this.perfil = value; }
         }
 
     }

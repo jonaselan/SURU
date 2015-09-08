@@ -14,8 +14,7 @@ namespace BLL
             if (s != usr.SENHA) { throw new Exception("Matrícula ou Senha inválida."); }
             Session session = new Session();
             session.User = usr;
-            session.Aluno = (DTO.Aluno) await usrbll.GetPerfil(usr);
-
+            session.Perfil = await usrbll.GetPerfil(usr);    
             return session;
         }
     }

@@ -8,7 +8,7 @@ namespace DTO
 {
     public static class Program
     {
-        const string VERSION = "0.1-dev";
+        const string VERSION = "0.5-dev";
         public static string Version { get { return VERSION; } }
         public static string OnlineVersion { get; set; }
     }

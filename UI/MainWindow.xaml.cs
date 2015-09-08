@@ -173,13 +173,11 @@ namespace UI
             AppDomain.CurrentDomain.SetData("DataDirectory", path);
             Database.Acess();
             InitializeComponent();
-#if DEBUG_DB
-            DebugUser janelaDBDebug = new DebugUser();
-            janelaDBDebug.Show();
-#endif
             animationLogoHeight.Completed += new EventHandler(logoFinished);
             animationLogoFadeOutContent.Completed += new EventHandler(animation_FadeOutCompleted);
             animationBtnEntrarErro.Completed += new EventHandler(animation_EntrarErroCompleted);
+            Testing.DebugUser wDebugUser = new Testing.DebugUser();
+            wDebugUser.Show();
         }
 
         private void animation_EntrarErroCompleted(object sender, EventArgs e) {
@@ -200,10 +198,20 @@ namespace UI
             polygonRU.BeginAnimation(WidthProperty, new DoubleAnimation(0, new Duration(TimeSpan.FromSeconds(0.3))));
 
             await Task.Delay(1500);
-            wAluno telaAluno = new wAluno(session);
-            App.Current.MainWindow = telaAluno;
-            Close();
-            telaAluno.Show();
+            if (session.User.ISADM)
+            {
+                wAdministrador telaAdmin = new wAdministrador(session);
+                App.Current.MainWindow = telaAdmin;
+                Close();
+                telaAdmin.Show();
+            }
+            else {
+                wAluno telaAluno = new wAluno(session);
+                App.Current.MainWindow = telaAluno;
+                Close();
+                telaAluno.Show();
+            }
+            
         }
 
         private void animation_FadeOutCompleted(object sender, EventArgs e)
@@ -230,11 +238,12 @@ namespace UI
             catch (Exception ex)
             {
                 txbEntrarErro.Text = ex.Message;
+                Console.WriteLine(ex.Message);
                 btnEntrar.BeginAnimation(MarginProperty, animationBtnEntrarErro);
                 btnLimpar.BeginAnimation(MarginProperty, Animations.Buttons.LimparErro);
                 return;
             }
-            txbBemVindo.Text = string.Format("Bem vindo\n{0}", (session != null) ? session.Aluno.NOME : "?");
+            txbBemVindo.Text = string.Format("Bem vindo\n{0}", (session != null) ? session.Perfil.NOME : "?");
             txbEntrarErro.Visibility = Visibility.Hidden;
             ellipseLogo.BeginAnimation(HeightProperty, animationLogoHeight);
             ellipseLogo.BeginAnimation(WidthProperty, Animations.Logo.EllipseGrow);
