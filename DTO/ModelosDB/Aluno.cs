@@ -21,7 +21,12 @@ namespace DTO
         public bool QUI { get; set; }
         [Column, Nullable]
         public bool SEX { get; set; }
-        // demais....
+        [Column, Nullable]
+        public string PERIODO { get; set; } // text(max)
+        [Column, Nullable]
+        public string TURNO { get; set; } // text(max)
+        [Column, Nullable]
+        public string CURSO { get; set; } // text(max)
     }
     
 }

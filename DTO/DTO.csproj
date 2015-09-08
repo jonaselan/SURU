@@ -77,7 +77,9 @@
     <Compile Include="ModelosDB\Aluno.cs" />
     <Compile Include="ModelosDB\Email.cs" />
     <Compile Include="ItemComposto.cs" />
+    <Compile Include="ModelosDB\Fila.cs" />
     <Compile Include="ModelosDB\Perfil.cs" />
+    <Compile Include="ModelosDB\Prato.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="ModelosDB\Telefone.cs" />

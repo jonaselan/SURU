@@ -12,5 +12,7 @@ namespace DTO
         public object Item2 { get; set; }
         public object Item3 { get; set; }
         public object Item4 { get; set; }
+        public object Item5 { get; set; }
+        public object Item6 { get; set; }
     }
 }

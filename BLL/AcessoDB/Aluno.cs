@@ -20,6 +20,7 @@ namespace BLL
 
             // CONECTANDO AO DB
             DAL.Database db = new DAL.Database();
+            // modificar usuário
             db.Update(e);
         }
 
@@ -42,7 +43,7 @@ namespace BLL
             using (var db = new DTO.Database())
             {
                 var q = from p in db.TB_ALUNOS
-                        where p.NOME == nome
+                        where p.CURSO == nome
                         select p;
                 aluno = await q.FirstOrDefaultAsync();
             }
@@ -65,7 +66,7 @@ namespace BLL
 
         public void IsValido(DTO.Aluno e)
         {
-            if (e.NOME == "") { throw new Exception("Nome inválido"); }
+            if (e.CURSO == "") { throw new Exception("Nome inválido"); }
         }
 
         public async Task<List<DTO.Aluno>> Listar()

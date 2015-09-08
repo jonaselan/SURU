@@ -78,19 +78,19 @@ namespace UI.Testing
             if (usr.ISADM)
             {
                 adm.NOME = txtNome.Text;
+            
             }
             else {
                 //p = new DTO.Aluno();
                 a.NOME = txtNome.Text;
+
                 // ???    
             }
             
-
             /*p.Telefone = txtTelefone.Text;
              p.Email = txtEmail.Text;*/
             DTO.Usuario usr_match = await db_usr.ConsultarPorMatricula(txtMatricula.Text);
-            if (usr_match == null)
-            {
+            if (usr_match == null) {
                 try
                 {
                     var list = await db_usr.Listar();
@@ -102,6 +102,7 @@ namespace UI.Testing
                     }
                     else
                     {
+                        // aqui
                         var list2 = await db_aluno.Listar();
                         a.ID = list2.Count();
                         usr.ID_PERFIL = a.ID;
@@ -118,8 +119,8 @@ namespace UI.Testing
             {
                 try
                 {
-                    MessageBoxResult confirmationBox = MessageBox.Show("Sure", "Some Title", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation);
-                    if (DialogResult == true)
+                    MessageBoxResult confirmationBox = MessageBox.Show("Tem certeza?", "Alterando Usuário", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+                    if (confirmationBox == MessageBoxResult.Yes)
                     {
                         usr.ID_PERFIL = usr_match.ID_PERFIL;
                         if (usr.ISADM)
@@ -129,6 +130,9 @@ namespace UI.Testing
                         }
                         else 
                         {
+                            // modificar usuário
+                            // a DTO.Aluno
+                            // db_usr BLL.Usuario
                             a.ID = usr.ID_PERFIL;
                             db_usr.Alterar(usr, a, pwdSenha.IsEnabled);
                         }

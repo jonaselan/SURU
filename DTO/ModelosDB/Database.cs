@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 
 using LinqToDB;
+using System;
 
 namespace DTO
 {
@@ -11,6 +12,8 @@ namespace DTO
         public ITable<Administrador> TB_ADMINISTRADORES { get { return this.GetTable<Administrador>(); } }
         public ITable<Telefone> TB_TELEFONES { get { return this.GetTable<Telefone>(); } }
         public ITable<Usuario> TB_USUARIOS { get { return this.GetTable<Usuario>(); } }
+        public ITable<Prato> TB_PRATOS { get { return this.GetTable<Prato>(); } }
+        public ITable<Fila> TB_FILAS { get { return this.GetTable<Fila>(); } }
 
         public Database()
         {
@@ -57,5 +60,16 @@ namespace DTO
             return table.FirstOrDefault(t =>
                 t.MATRICULA == MATRICULA);
         }
+        public static Prato Find(this ITable<Prato> table, int ID_PRATO)
+        {
+            return table.FirstOrDefault(t =>
+                t.ID_PRATO == ID_PRATO);
+        }
+        public static Fila Find(this ITable<Fila> table, DateTime DATA)
+        {
+            return table.FirstOrDefault(t =>
+                t.DATA == DATA);
+        }
+
     }
 }

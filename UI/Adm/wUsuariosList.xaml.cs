@@ -13,19 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DTO;
 
-namespace UI.Testing
+namespace UI.Adm
 {
     /// <summary>
-    /// Interaction logic for DebugUserList.xaml
+    /// Interaction logic for wUsuariosList.xaml
     /// </summary>
-    public partial class DebugUserList : Window {
-        public DebugUserList()
+    public partial class wUsuariosList : Window
+    {
+        public wUsuariosList()
         {
             InitializeComponent();
         }
 
-        private async Task<List<ItemComposto>> GetDB() {
-           
+        private async Task<List<ItemComposto>> GetDB()
+        {
+
             BLL.Usuario usuariobll = new BLL.Usuario();
             BLL.Telefone telefonebll = new BLL.Telefone();
             BLL.Email emailbll = new BLL.Email();
@@ -34,7 +36,13 @@ namespace UI.Testing
             
             List<ItemComposto> combined = new List<ItemComposto>();
 
-            foreach (Usuario u in await usuariobll.Listar()) {
+            foreach (Usuario u in await usuariobll.Listar())
+            {
+
+                if (u.ISADM){
+                    continue;
+                }
+
                 itemcomposto = new ItemComposto();
                 itemcomposto.Item1 = u;
                 itemcomposto.Item2 = await usuariobll.GetPerfil(u);
@@ -47,25 +55,20 @@ namespace UI.Testing
             return combined;
         }
 
-        private async void DebugUserListWindow_Loaded(object sender, RoutedEventArgs e)
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            BLL.Usuario bll = new BLL.Usuario();
             dgUsuarios.ItemsSource = await GetDB();
-        }
 
-        private void btnSelecionar_Click(object sender, RoutedEventArgs e)
-        {
-            this.DialogResult = true;
-        }
-
-        private void listUsuarios_Selected(object sender, RoutedEventArgs e)
-        {
-            btnSelecionar.IsEnabled = true;
         }
 
         private void dgUsuarios_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             btnSelecionar.IsEnabled = true;
+        }
+
+        private void btnSelecionar_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
         }
     }
 }

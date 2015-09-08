@@ -52,6 +52,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Data.SQLite, Version=1.0.98.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Core.1.0.98.1\lib\net451\System.Data.SQLite.dll</HintPath>
       <Private>True</Private>
@@ -81,12 +82,33 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="Adm\wAdministrador.xaml.cs">
+      <DependentUpon>wAdministrador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Adm\wUsuariosList.xaml.cs">
+      <DependentUpon>wUsuariosList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aluno\alterarSenha.xaml.cs">
+      <DependentUpon>alterarSenha.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Testing\DebugUser.xaml.cs">
       <DependentUpon>DebugUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="Testing\DebugUserList.xaml.cs">
       <DependentUpon>DebugUserList.xaml</DependentUpon>
     </Compile>
+    <Page Include="Adm\wAdministrador.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Adm\wUsuariosList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Aluno\alterarSenha.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Aluno\wAluno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -147,7 +169,31 @@
     <Resource Include="img\user.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Adm\" />
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SIcone.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SIcone_NoShadow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Testing\SIconeDebug.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{8c4b907a-af21-41ae-9e0a-11a3aaa1f5b5}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{a1ac1256-9d85-4dd1-b4a4-cefe3f82e5d1}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icon-alunos.jpg" />
+    <Resource Include="img\icon-cardapio.jpg" />
+    <Resource Include="img\icon-fila.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="SIcone.ico" />

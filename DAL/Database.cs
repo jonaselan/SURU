@@ -22,6 +22,8 @@ namespace DAL
                 db.CreateTable<Administrador>();
                 db.CreateTable<Email>();
                 db.CreateTable<Telefone>();
+                db.CreateTable<Prato>();
+                db.CreateTable<Fila>();
             }
         }
 

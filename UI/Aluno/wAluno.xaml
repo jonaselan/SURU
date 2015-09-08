@@ -1,42 +1,168 @@
 ﻿<Window x:Class="UI.Aluno.wAluno"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="SURU" Height="649" Width="655" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="SURU" Height="593.5" Width="908.1" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-            <GradientStop Color="#FFECEBE5" Offset="0.036"/>
-            <GradientStop Color="#FFE4DF67" Offset="0.843"/>
+            <GradientStop Color="#FFECEBE5" Offset="0.044"/>
+            <GradientStop Color="#FFFFF8D7" Offset="0.48"/>
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
+        <Button x:Name="Sair" Content="Sair" HorizontalAlignment="Left" VerticalAlignment="Top" Width="51" Margin="826,22,0,0" Click="Sair_Click"/>
+        <Button x:Name="btnAlterar" Content="Alterar Senha" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Margin="717,22,0,0" Click="btnAlterar_Click" />
         <Image HorizontalAlignment="Left" Height="104" VerticalAlignment="Top" Width="94" Margin="23,69,0,0" Source="../img/user.png" />
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="23,47,0,0" Stroke="Black" VerticalAlignment="Top" Width="561"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="23,47,0,0" Stroke="Black" VerticalAlignment="Top" Width="854"/>
         <Label Content="Dados do Aluno" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" BorderThickness="0" FontSize="22"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="21,226,0,0" Stroke="Black" VerticalAlignment="Top" Width="563"/>
-        <Label Content="Montar Prato" HorizontalAlignment="Left" Margin="21,189,0,0" VerticalAlignment="Top" BorderThickness="0" FontSize="22"/>
-        <Label Content="Segunda" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,244,0,0" FontSize="14"/>
-        <Grid Background="Gray" HorizontalAlignment="Left" Height="307" VerticalAlignment="Top" Width="193" Margin="23,279,0,0">
-            <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="24,67,0,0"/>
-            <Label Content="Verdura" HorizontalAlignment="Left" Margin="16,154,0,0" VerticalAlignment="Top"/>
-            <Label Content="Mistura" Margin="21,41,117,240"/>
-            <Label Content="Fruta" HorizontalAlignment="Left" Margin="19,194,0,0" VerticalAlignment="Top"/>
-            <RadioButton Content="Sim" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,160,0,0"/>
-            <RadioButton Content="Não" HorizontalAlignment="Left" Margin="129,160,0,0" VerticalAlignment="Top"/>
-            <RadioButton Content="Sim" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,200,0,0"/>
-            <RadioButton Content="Não" HorizontalAlignment="Left" Margin="129,200,0,0" VerticalAlignment="Top"/>
-            <Label Content="Suco" HorizontalAlignment="Left" Margin="19,225,0,0" VerticalAlignment="Top"/>
-            <RadioButton Content="Sim" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,231,0,0"/>
-            <RadioButton Content="Não" HorizontalAlignment="Left" Margin="129,231,0,0" VerticalAlignment="Top"/>
-            <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="23,123,0,0"/>
-            <Label Content="Acompanhamento:" Margin="22,97,42,184"/>
-            <CheckBox Content="tudo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="67,19,0,0"/>
-            <Button Content="Finalizar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="100,273,0,0"/>
-        </Grid>
-        <Grid HorizontalAlignment="Left" Height="102" VerticalAlignment="Top" Width="415" Margin="148,71,0,0" Background="Gray">
-            <Label Content="Nome: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-            <TextBlock x:Name="txbNome" Margin="60,16,0,0" Text="" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        </Grid>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="21,202,0,0" Stroke="Black" VerticalAlignment="Top" Width="856"/>
+
+        <Grid HorizontalAlignment="Left" Height="84" VerticalAlignment="Top" Width="729" Margin="148,71,0,0" Background="Gray">
+            <Label Content="Nome: " HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top"/>
+            <TextBlock x:Name="txNome" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="20,38,0,0"/>
+            <Label Content="Curso:" HorizontalAlignment="Left" Margin="345,16,0,0" VerticalAlignment="Top"/>
+            <TextBlock x:Name="txCurso" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="350,38,0,0"/>
+            <Label Content="Período: " HorizontalAlignment="Left" Margin="499,16,0,0" VerticalAlignment="Top"/>
+            <TextBlock x:Name="txPeriodo" Text="" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="505,38,0,0"/>
+            <Label Content="Turno: " HorizontalAlignment="Left" Margin="626,16,0,0" VerticalAlignment="Top"/>
+            <TextBlock x:Name="txTurno" Text="" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="634,42,0,0"/>
+            <Label Content="Matrícula:" HorizontalAlignment="Left" Margin="215,16,0,0" VerticalAlignment="Top"/>
+            <TextBlock x:Name="txMatricula" Text="" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="219,38,0,0"/>
 
 
+        </Grid>
+
+        <Label Content="Montar Prato" HorizontalAlignment="Left" Margin="21,165,0,0" VerticalAlignment="Top" BorderThickness="0" FontSize="22"/>
+        <Label Content="Segunda" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,202,0,0" FontSize="14"/>
+        <Label x:Name="lbCodigoSeg" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,223,0,0" FontWeight="Bold"/>
+        <Grid x:Name="gridSeg" Background="Gray" HorizontalAlignment="Left" Height="295" VerticalAlignment="Top" Width="172" Margin="14,245,0,0">
+            <RadioButton x:Name="carneSeg" Content="Carne" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,70,0,0" GroupName="misturaSegunda"/>
+            <RadioButton x:Name="peixeSeg" Content="Peixe" HorizontalAlignment="Left" Margin="91,50,0,0" VerticalAlignment="Top" GroupName="misturaSegunda"/>
+            <CheckBox x:Name="ckSeg" Content="tudo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,14,0,0" Checked="ckSeg_Checked" Unchecked="ckSeg_Unchecked"/>
+            <Button x:Name="finSegunda" Content="Finalizar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="77,266,0,0" Click="finSegunda_Click"/>
+            <RadioButton x:Name="frangoSeg" Content="Frango" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,50,0,0" GroupName="misturaSegunda"/>
+            <RadioButton x:Name="lingSeg" Content="Linguiça" HorizontalAlignment="Left" Margin="91,70,0,0" VerticalAlignment="Top" GroupName="misturaSegunda"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="6,90,0,0" Stroke="Black" VerticalAlignment="Top" Width="154"/>
+            <RadioButton x:Name="arrozSeg" Content="Arroz" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,104,0,0" GroupName="acoSeg"/>
+            <RadioButton x:Name="macarraoSeg" Content="Macarrão" HorizontalAlignment="Left" Margin="91,104,0,0" VerticalAlignment="Top" GroupName="acoSeg"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="12,129,0,0" Stroke="Black" VerticalAlignment="Top" Width="154"/>
+            <CheckBox x:Name="feijaoSeg" Content="Feijão" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,147,0,0"/>
+            <CheckBox x:Name="verduraSeg" Content="Verdura" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,173,0,0"/>
+            <CheckBox x:Name="frutaSeg" Content="Fruta" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="92,173,0,0"/>
+            <Label Content="Suco" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,198,0,0"/>
+            <ComboBox x:Name="cbSucoSeg" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="19,224,0,0">
+                <ListBoxItem Content="Nenhum "/>
+                <ListBoxItem Content="Acerola "/>
+                <ListBoxItem Content="Laranja "/>
+                <ListBoxItem Content="Goiaba "/>
+                <ListBoxItem Content="Graviola "/>
+            </ComboBox>
+            <Label x:Name="lbSucoSeg" Content="Selecione um suco" HorizontalAlignment="Left" Margin="50,198,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#FFFF0404" Visibility="Hidden"/>
+        </Grid>
+
+        <Label Content="Terça" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="258,202,0,0" FontSize="14"/>
+        <Label x:Name="lbCodigoTerc" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="264,223,0,0" FontWeight="Bold" Content="" RenderTransformOrigin="3.207,0.231"/>
+        <Grid x:Name="gridTerc" Background="Gray" HorizontalAlignment="Left" Height="295" VerticalAlignment="Top" Width="171" Margin="191,245,0,0">
+            <RadioButton x:Name="carneTerc" Content="Carne" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,70,0,0" GroupName="misturaTerca"/>
+            <RadioButton x:Name="peixeTerc" Content="Peixe" HorizontalAlignment="Left" Margin="91,50,0,0" VerticalAlignment="Top" GroupName="misturaTerca"/>
+            <CheckBox x:Name="ckTerc" Content="tudo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,15,0,0" Unchecked="ckTerc_Unchecked" Checked="ckTerc_Checked"/>
+            <Button x:Name="finTerca" Content="Finalizar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="76,266,0,0" Click="finTerca_Click"/>
+            <RadioButton x:Name="frangoTerc" Content="Frango" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,50,0,0" GroupName="misturaTerca"/>
+            <RadioButton x:Name="lingTerc" Content="Linguiça" HorizontalAlignment="Left" Margin="91,70,0,0" VerticalAlignment="Top" GroupName="misturaTerca"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="11,90,0,0" Stroke="Black" VerticalAlignment="Top" Width="154"/>
+            <RadioButton x:Name="arrozTerc" Content="Arroz" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,104,0,0" GroupName="acoTerca"/>
+            <RadioButton x:Name="macarraoTerc" Content="Macarrão" HorizontalAlignment="Left" Margin="91,104,0,0" VerticalAlignment="Top" GroupName="acoTerca"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="9,129,0,0" Stroke="Black" VerticalAlignment="Top" Width="154"/>
+            <CheckBox x:Name="feijaoTerc" Content="Feijão" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,147,0,0"/>
+            <CheckBox x:Name="verduraTerc" Content="Verdura" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,173,0,0"/>
+            <CheckBox x:Name="frutaTerc" Content="Fruta" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="92,173,0,0"/>
+            <Label Content="Suco" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,198,0,0"/>
+            <Label x:Name="lbSucoTerc" Content="Selecione um suco" HorizontalAlignment="Left" Margin="50,198,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#FFFF0404" Visibility="Hidden"/>
+            <ComboBox x:Name="cbSucoTerc" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="19,224,0,0">
+                <ListBoxItem Content="Nenhum " />
+                <ListBoxItem Content="Acerola "/>
+                <ListBoxItem Content="Laranja "/>
+                <ListBoxItem Content="Goiaba "/>
+                <ListBoxItem Content="Graviola "/>
+            </ComboBox>
+        </Grid>
+        <Label Content="Quarta" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="431,202,0,0" FontSize="14"/>
+        <Label x:Name="lbCodigoQuart" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="443,223,0,0" FontWeight="Bold" Content=""/>
+        <Grid x:Name="gridQuart" Background="Gray" HorizontalAlignment="Left" Height="295" VerticalAlignment="Top" Width="169" Margin="368,245,0,0">
+            <RadioButton x:Name="carneQuart" Content="Carne" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,70,0,0" GroupName="misturaQuarta"/>
+            <RadioButton x:Name="peixeQuart" Content="Peixe" HorizontalAlignment="Left" Margin="91,50,0,0" VerticalAlignment="Top" GroupName="misturaQuarta"/>
+            <CheckBox x:Name="ckQuart" Content="tudo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,14,0,0" Checked="ckQuart_Checked" Unchecked="ckQuart_Unchecked"/>
+            <Button x:Name="finQuarta" Content="Finalizar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="82,266,0,0" Click="finQuarta_Click"/>
+            <RadioButton x:Name="frangoQuart" Content="Frango" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,50,0,0" GroupName="misturaQuarta"/>
+            <RadioButton x:Name="lingQuart" Content="Linguiça" HorizontalAlignment="Left" Margin="91,70,0,0" VerticalAlignment="Top" GroupName="misturaQuarta"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="11,90,0,0" Stroke="Black" VerticalAlignment="Top" Width="145"/>
+            <RadioButton x:Name="arrozQuart" Content="Arroz" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,104,0,0" GroupName="acoQuarta"/>
+            <RadioButton x:Name="macarraoQuart" Content="Macarrão" HorizontalAlignment="Left" Margin="91,104,0,0" VerticalAlignment="Top" GroupName="acoQuarta"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="12,129,0,0" Stroke="Black" VerticalAlignment="Top" Width="145"/>
+            <CheckBox x:Name="feijaoQuart" Content="Feijão" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,147,0,0"/>
+            <CheckBox x:Name="verduraQuart" Content="Verdura" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,173,0,0"/>
+            <CheckBox x:Name="frutaQuart" Content="Fruta" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="92,173,0,0"/>
+            <Label Content="Suco" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,198,0,0"/>
+            <Label x:Name="lbSucoQuart" Content="Selecione um suco" HorizontalAlignment="Left" Margin="50,198,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#FFFF0404" Visibility="Hidden"/>
+            <ComboBox x:Name="cbSucoQuart" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="19,224,0,0">
+                <ListBoxItem Content="Nenhum " />
+                <ListBoxItem Content="Acerola "/>
+                <ListBoxItem Content="Laranja "/>
+                <ListBoxItem Content="Goiaba "/>
+                <ListBoxItem Content="Graviola "/>
+            </ComboBox>
+        </Grid>
+        <Label Content="Quinta" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="603,202,0,0" FontSize="14"/>
+        <Label x:Name="lbCodigoQuint" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="614,220,0,0" FontWeight="Bold" Content=""/>
+        <Grid x:Name="gridQuint" Background="Gray" HorizontalAlignment="Left" Height="295" VerticalAlignment="Top" Width="169" Margin="543,245,0,0">
+            <RadioButton x:Name="carneQuint" Content="Carne" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,70,0,0" GroupName="misturaQuinta"/>
+            <RadioButton x:Name="peixeQuint" Content="Peixe" HorizontalAlignment="Left" Margin="91,50,0,0" VerticalAlignment="Top" GroupName="misturaQuinta"/>
+            <CheckBox x:Name="ckQuint" Content="tudo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,14,0,0" Checked="ckQuint_Checked" Unchecked="ckQuint_Unchecked"/>
+            <Button x:Name="finQuinta" Content="Finalizar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="82,266,0,0" Click="finQuinta_Click"/>
+            <RadioButton x:Name="frangoQuint" Content="Frango" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,50,0,0" GroupName="misturaQuinta"/>
+            <RadioButton x:Name="lingQuint" Content="Linguiça" HorizontalAlignment="Left" Margin="91,70,0,0" VerticalAlignment="Top" GroupName="misturaQuinta"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="11,90,0,0" Stroke="Black" VerticalAlignment="Top" Width="145"/>
+            <RadioButton x:Name="arrozQuint" Content="Arroz" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,104,0,0" GroupName="acoQuinta"/>
+            <RadioButton x:Name="macarraoQuint" Content="Macarrão" HorizontalAlignment="Left" Margin="91,104,0,0" VerticalAlignment="Top" GroupName="acoQuinta"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="12,129,0,0" Stroke="Black" VerticalAlignment="Top" Width="145"/>
+            <CheckBox x:Name="feijaoQuint" Content="Feijão" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,147,0,0"/>
+            <CheckBox x:Name="verduraQuint" Content="Verdura" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,173,0,0"/>
+            <CheckBox x:Name="frutaQuint" Content="Fruta" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="92,173,0,0"/>
+            <Label Content="Suco" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,198,0,0"/>
+            <Label x:Name="lbSucoQuint" Content="Selecione um suco" HorizontalAlignment="Left" Margin="50,198,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#FFFF0404" Visibility="Hidden"/>
+            <ComboBox x:Name="cbSucoQuint" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="19,224,0,0">
+                <ListBoxItem Content="Nenhum " />
+                <ListBoxItem Content="Acerola "/>
+                <ListBoxItem Content="Laranja "/>
+                <ListBoxItem Content="Goiaba "/>
+                <ListBoxItem Content="Graviola "/>
+            </ComboBox>
+        </Grid>
+        <Label Content="Sexta" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="776,202,0,0" FontSize="14"/>
+        <Label x:Name="lbCodigoSex" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="783,221,0,0" FontWeight="Bold" Content=""/>
+        <Grid x:Name="gridSex" Background="Gray" HorizontalAlignment="Left" Height="295" VerticalAlignment="Top" Width="169" Margin="717,245,0,0">
+            <RadioButton x:Name="carneSex" Content="Carne" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,70,0,0" GroupName="misturaSexta"/>
+            <RadioButton x:Name="peixeSex" Content="Peixe" HorizontalAlignment="Left" Margin="91,50,0,0" VerticalAlignment="Top" GroupName="misturaSexta"/>
+            <CheckBox x:Name="ckSex" Content="tudo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,15,0,0" Unchecked="ckSex_Unchecked" Checked="ckSex_Checked"/>
+            <Button x:Name="finSexta" Content="Finalizar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="82,266,0,0" Click="finSexta_Click"/>
+            <RadioButton x:Name="frangoSex" Content="Frango" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,50,0,0" GroupName="misturaSexta"/>
+            <RadioButton x:Name="lingSex" Content="Linguiça" HorizontalAlignment="Left" Margin="91,70,0,0" VerticalAlignment="Top" GroupName="misturaSexta"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="11,90,0,0" Stroke="Black" VerticalAlignment="Top" Width="145"/>
+            <RadioButton x:Name="arrozSex" Content="Arroz" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,104,0,0" GroupName="acoSexta"/>
+            <RadioButton x:Name="macarraoSex" Content="Macarrão" HorizontalAlignment="Left" Margin="91,104,0,0" VerticalAlignment="Top" GroupName="acoSexta"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="2" Margin="12,129,0,0" Stroke="Black" VerticalAlignment="Top" Width="145"/>
+            <CheckBox x:Name="feijaoSex" Content="Feijão" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,147,0,0"/>
+            <CheckBox x:Name="verduraSex" Content="Verdura" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,173,0,0"/>
+            <CheckBox x:Name="frutaSex" Content="Fruta" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="92,173,0,0"/>
+            <Label Content="Suco" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,198,0,0"/>
+            <Label x:Name="lbSucoSex" Content="Selecione um suco" HorizontalAlignment="Left" Margin="50,198,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#FFFF0404" Visibility="Hidden"/>
+            <ComboBox x:Name="cbSucoSex" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="19,224,0,0">
+                <ListBoxItem Content="Nenhum " />
+                <ListBoxItem Content="Acerola "/>
+                <ListBoxItem Content="Laranja "/>
+                <ListBoxItem Content="Goiaba "/>
+                <ListBoxItem Content="Graviola "/>
+            </ComboBox>
+        </Grid>
+        
     </Grid>
 </Window>
